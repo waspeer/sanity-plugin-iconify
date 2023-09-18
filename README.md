@@ -223,18 +223,16 @@ const type = defineType({
   of: [
     {
       type: 'icon',
-      preview: {
-        select: {
-          iconName: 'name', // <-- Selects the name attribute of the icon object
-        },
-        prepare({ iconName }) {
-          return {
+      components: {
+        preview: (props: PreviewProps) => {
+          return props.renderDefault({
+            ...props,
             title: 'Custom title',
             subtitle: 'Custom subtitle',
-            media: <Icon icon={iconName} />, // <-- Renders the selected icon as media
-          };
+            media: <Icon icon={props.title as string} />, // <-- Renders the selected icon as media
+          });
         },
-      }
+      },
     },
   ],
 })
