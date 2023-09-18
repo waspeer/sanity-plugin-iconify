@@ -35,6 +35,10 @@
 
 Enhance your [Sanity](https://www.sanity.io/) project with the Iconify plugin, which introduces an Icon schema type and a custom input component. Leveraging the extensive library of open-source vector icons available through the [Iconify](https://iconify.design/), this plugin enables you to effortlessly select and integrate over 150,000 icons from popular icon sets directly into your Sanity project.
 
+<div align="center">
+  <img src="https://github.com/waspeer/sanity-plugin-iconify/assets/11842931/f937c953-a87d-431e-85b6-e3938d69ddac" width="600" />
+</div>
+
 ## 🚀 Getting Started
 
 ### Installation
@@ -210,7 +214,11 @@ For further information, you may refer to the [official documentation](https://i
 
 ### Preview
 
-The plugin includes a custom list preview that automatically renders the selected icon accompanied by its name and collection. If needed you can override this preview component by specifying your own in the schema type options. Use the `@iconify/react` package to render the icon.
+The plugin includes a custom list preview that automatically renders the selected icon accompanied by its name and collection. 
+
+<img width="618" alt="array-of-icons" src="https://github.com/waspeer/sanity-plugin-iconify/assets/11842931/0c1c32a1-e796-434f-ae64-c134f9b51ab9">
+
+If needed you can override this preview component by specifying your own in the schema type options. Use the `@iconify/react` package to render the icon.
 
 ```tsx
 import { Icon } from '@iconify/react';
