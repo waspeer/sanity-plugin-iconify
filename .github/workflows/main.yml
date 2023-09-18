@@ -90,9 +90,10 @@ jobs:
           git config --global core.autocrlf false
           git config --global core.eol lf
       - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
       - uses: actions/setup-node@v3
         with:
-          cache: npm
+          cache: pnpm
           node-version: ${{ matrix.node }}
       - run: pnpm install
       - run: pnpm --if-present test
