@@ -55,10 +55,10 @@ jobs:
           node-version: lts/*
       - run: pnpm install
         # Linting can be skipped
-      - run: pnpm run lint --if-present
+      - run: pnpm run --if-present lint
         if: github.event.inputs.test != 'false'
         # But not the build script, as semantic-release will crash if this command fails so it makes sense to test it early
-      - run: pnpm run prepublishOnly --if-present
+      - run: pnpm run --if-present prepublishOnly
 
   test:
     needs: build
@@ -94,7 +94,7 @@ jobs:
           cache: npm
           node-version: ${{ matrix.node }}
       - run: pnpm install
-      - run: pnpm test --if-present
+      - run: pnpm --if-present test
 
   release:
     permissions:
