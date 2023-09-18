@@ -53,7 +53,7 @@ jobs:
         with:
           cache: pnpm
           node-version: lts/*
-      - run: npm clean-install
+      - run: pnpm install
         # Linting can be skipped
       - run: pnpm run lint --if-present
         if: github.event.inputs.test != 'false'
