@@ -46,16 +46,19 @@ jobs:
     name: Lint & Build
     steps:
       - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: latest
       - uses: actions/setup-node@v3
         with:
-          cache: npm
+          cache: pnpm
           node-version: lts/*
       - run: npm clean-install
         # Linting can be skipped
-      - run: npm run lint --if-present
+      - run: pnpm run lint --if-present
         if: github.event.inputs.test != 'false'
         # But not the build script, as semantic-release will crash if this command fails so it makes sense to test it early
-      - run: npm run prepublishOnly --if-present
+      - run: pnpm run prepublishOnly --if-present
 
   test:
     needs: build
@@ -90,8 +93,8 @@ jobs:
         with:
           cache: npm
           node-version: ${{ matrix.node }}
-      - run: npm install
-      - run: npm test --if-present
+      - run: pnpm install
+      - run: pnpm test --if-present
 
   release:
     permissions:
@@ -110,15 +113,16 @@ jobs:
           # Need to fetch entire commit history to
           # analyze every commit since last release
           fetch-depth: 0
+      - uses: pnpm/action-setup@v2
       - uses: actions/setup-node@v3
         with:
-          cache: npm
+          cache: pnpm
           node-version: lts/*
-      - run: npm clean-install
-      - run: npm audit signatures
+      - run: pnpm install
+      - run: pnpm audit signatures
         # Branches that will release new versions are defined in .releaserc.json
         # @TODO remove --dry-run after verifying everything is good to go
-      - run: npx semantic-release --dry-run
+      - run: pnpx semantic-release --dry-run
         # Don't allow interrupting the release step if the job is cancelled, as it can lead to an inconsistent state
         # e.g. git tags were pushed but it exited before `npm publish`
         if: always()
