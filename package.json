@@ -1,0 +1,103 @@
+{
+  "name": "sanity-plugin-iconify",
+  "version": "1.0.0",
+  "description": "Icon picker based on Iconify",
+  "keywords": [
+    "sanity",
+    "sanity-plugin"
+  ],
+  "homepage": "https://github.com/waspeer/sanity-plugin-iconify#readme",
+  "bugs": {
+    "url": "https://github.com/waspeer/sanity-plugin-iconify/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/waspeer/sanity-plugin-iconify.git"
+  },
+  "license": "MIT",
+  "author": "Wannes Salomé <mail@wannessalome.nl>",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "source": "./src/index.ts",
+      "require": "./dist/index.js",
+      "import": "./dist/index.esm.js",
+      "default": "./dist/index.esm.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.esm.js",
+  "source": "./src/index.ts",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "sanity.json",
+    "src",
+    "v2-incompatible.js"
+  ],
+  "scripts": {
+    "build": "run-s clean && plugin-kit verify-package --silent && pkg-utils build --strict && pkg-utils --strict",
+    "clean": "rimraf dist",
+    "format": "prettier --write --cache --ignore-unknown .",
+    "link-watch": "pnpm run generate-types && plugin-kit link-watch",
+    "lint": "eslint .",
+    "prepublishOnly": "run-s build",
+    "watch": "pkg-utils watch --strict",
+    "generate-types": "tsx src/lib/generate-types",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "@headlessui/react": "^1.7.17",
+    "@iconify/react": "^4.1.1",
+    "@iconify/utils": "^2.1.10",
+    "@sanity/icons": "^2.4.1",
+    "@sanity/incompatible-plugin": "^1.0.4",
+    "@sanity/ui": "^1.8.2",
+    "@tanstack/react-query": "^4.35.3",
+    "change-case": "^4.1.2",
+    "ts-pattern": "^5.0.5",
+    "use-debounce": "^9.0.4"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.7.1",
+    "@commitlint/config-conventional": "^17.7.0",
+    "@iconify/json": "^2.2.116",
+    "@iconify/types": "^2.0.0",
+    "@sanity/pkg-utils": "^2.4.9",
+    "@sanity/plugin-kit": "^3.1.10",
+    "@sanity/semantic-release-preset": "^4.1.4",
+    "@tanstack/eslint-plugin-query": "^4.34.1",
+    "@tanstack/react-query-devtools": "^4.35.3",
+    "@types/react": "^18.2.21",
+    "@types/styled-components": "^5.1.27",
+    "@typescript-eslint/eslint-plugin": "^6.7.0",
+    "@typescript-eslint/parser": "^6.7.0",
+    "eslint": "^8.49.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-config-sanity": "^6.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.1",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^3.0.3",
+    "prettier-plugin-packagejson": "^2.4.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-is": "^18.2.0",
+    "rimraf": "^5.0.1",
+    "sanity": "^3.16.7",
+    "tsx": "^3.12.10",
+    "typescript": "^5.2.2"
+  },
+  "peerDependencies": {
+    "react": "^18",
+    "sanity": "^3",
+    "styled-components": "^5"
+  },
+  "engines": {
+    "node": ">=14"
+  }
+}
