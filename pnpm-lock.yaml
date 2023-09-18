@@ -46,6 +46,9 @@ devDependencies:
   '@commitlint/config-conventional':
     specifier: ^17.7.0
     version: 17.7.0
+  '@commitlint/load':
+    specifier: ^17.7.1
+    version: 17.7.1
   '@iconify/json':
     specifier: ^2.2.116
     version: 2.2.116

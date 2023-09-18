@@ -42,7 +42,7 @@
     "format": "prettier --write --cache --ignore-unknown .",
     "link-watch": "pnpm run generate-types && plugin-kit link-watch",
     "lint": "eslint .",
-    "prepublishOnly": "run-s build",
+    "prepublish-only": "run-s build",
     "watch": "pkg-utils watch --strict",
     "generate-types": "tsx src/lib/generate-types",
     "prepare": "husky install"
@@ -62,6 +62,7 @@
   "devDependencies": {
     "@commitlint/cli": "^17.7.1",
     "@commitlint/config-conventional": "^17.7.0",
+    "@commitlint/load": "^17.7.1",
     "@iconify/json": "^2.2.116",
     "@iconify/types": "^2.0.0",
     "@sanity/pkg-utils": "^2.4.9",
