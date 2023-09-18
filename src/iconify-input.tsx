@@ -19,7 +19,10 @@ export function IconifyInput(props: IconifyInputProps) {
   const prettyName = usePrettyIconName(selectedIcon);
 
   const options: IconOptions = schemaType.options;
-  const collections = options?.collections ?? config?.collections ?? null;
+  const collections =
+    (!options?.collections?.length && options.collections) ||
+    (!config?.collections?.length && config.collections) ||
+    null;
   const showName = options?.showName ?? config?.showName ?? false;
 
   const handleSelect = useCallback(

@@ -4,6 +4,8 @@ import type { BaseSchemaDefinition } from 'sanity';
 // If this line errors, the type definitions have not been generated.
 import type { IconPrefix } from './icon-types.gen';
 
+// Export types that need to be bundled with the plugin
+export type { BaseSchemaDefinition } from 'sanity';
 export type { IconPrefix };
 
 export interface IconOptions {
