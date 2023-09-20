@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.2](https://github.com/waspeer/sanity-plugin-iconify/compare/v1.0.1...v1.0.2) (2023-09-20)
+
+### Bug Fixes
+
+- **workflow:** add artifacts to workflow to fix dist folder not showing in npm package ([63bad12](https://github.com/waspeer/sanity-plugin-iconify/commit/63bad128a5dd66d758f692b3527ba6328773d994))
+
 ## [1.0.1](https://github.com/waspeer/sanity-plugin-iconify/compare/v1.0.0...v1.0.1) (2023-09-20)
 
 ### Bug Fixes
