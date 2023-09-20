@@ -60,6 +60,10 @@ jobs:
         if: github.event.inputs.test != 'false'
         # But not the build script, as semantic-release will crash if this command fails so it makes sense to test it early
       - run: pnpm run --if-present prepublish-only
+      - uses: actions/upload-artifact@v3
+        with:
+          name: dist
+          path: dist/
 
   # test:
   #   needs: build
@@ -126,6 +130,10 @@ jobs:
           node-version: lts/*
       - run: pnpm install --prefer-offline
       - run: pnpm audit signatures
+      - uses: actions/download-artifact@v3
+        with:
+          name: dist
+          path: dist/
       - run: ls
         # Branches that will release new versions are defined in .releaserc.json
         # @TODO remove --dry-run after verifying everything is good to go
