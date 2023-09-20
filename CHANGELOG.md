@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.1](https://github.com/waspeer/sanity-plugin-iconify/compare/v1.0.0...v1.0.1) (2023-09-20)
+
+### Bug Fixes
+
+- **npmignore:** add .npmignore file to make sure dist folder is published ([0765c7c](https://github.com/waspeer/sanity-plugin-iconify/commit/0765c7c3950490442398a9b0d0f711649b0a4aad))
+
 ## 1.0.0 (2023-09-18)
 
 ### Features
