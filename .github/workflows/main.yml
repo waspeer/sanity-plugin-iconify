@@ -108,7 +108,7 @@ jobs:
       id-token: write # to enable use of OIDC for npm provenance
     needs: build # [build, test]
     # only run if opt-in during workflow_dispatch
-    if: always() && github.event.inputs.release == 'true' && needs.build.result != 'failure' && needs.test.result != 'failure' && needs.test.result != 'cancelled'
+    if: always() && github.event.inputs.release == 'true' && needs.build.result != 'failure'
     runs-on: ubuntu-latest
     name: Semantic release
     steps:
@@ -126,9 +126,10 @@ jobs:
           node-version: lts/*
       - run: pnpm install --prefer-offline
       - run: pnpm audit signatures
+      - run: ls
         # Branches that will release new versions are defined in .releaserc.json
         # @TODO remove --dry-run after verifying everything is good to go
-      - run: pnpx semantic-release
+      - run: pnpx semantic-release --dry-run
         # Don't allow interrupting the release step if the job is cancelled, as it can lead to an inconsistent state
         # e.g. git tags were pushed but it exited before `npm publish`
         if: always()
