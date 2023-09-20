@@ -62,8 +62,10 @@ jobs:
       - run: pnpm run --if-present prepublish-only
       - uses: actions/upload-artifact@v3
         with:
-          name: dist
-          path: dist/
+          name: build
+          path: |
+            dist/
+            node_modules/
 
   # test:
   #   needs: build
@@ -133,8 +135,7 @@ jobs:
       - run: pnpm audit signatures
       - uses: actions/download-artifact@v3
         with:
-          name: dist
-          path: dist/
+          name: build
       - run: ls && npm publish --dry-run
         # Branches that will release new versions are defined in .releaserc.json
         # @TODO remove --dry-run after verifying everything is good to go
