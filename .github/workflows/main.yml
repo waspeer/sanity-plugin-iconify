@@ -128,13 +128,14 @@ jobs:
         with:
           cache: pnpm
           node-version: lts/*
-      - run: pnpm install --prefer-offline
+      # I'm pretty sure this is not necessary, as the build job already caches the pnpm store
+      # - run: pnpm install --prefer-offline
       - run: pnpm audit signatures
       - uses: actions/download-artifact@v3
         with:
           name: dist
           path: dist/
-      - run: ls
+      - run: ls && npm publish --dry-run
         # Branches that will release new versions are defined in .releaserc.json
         # @TODO remove --dry-run after verifying everything is good to go
       - run: pnpx semantic-release --dry-run
