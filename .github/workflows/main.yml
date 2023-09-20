@@ -62,10 +62,8 @@ jobs:
       - run: pnpm run --if-present prepublish-only
       - uses: actions/upload-artifact@v3
         with:
-          name: build
-          path: |
-            dist/
-            node_modules/
+          name: dist
+          path: dist/
 
   # test:
   #   needs: build
@@ -130,12 +128,12 @@ jobs:
         with:
           cache: pnpm
           node-version: lts/*
-      # I'm pretty sure this is not necessary, as the build job already caches the pnpm store
-      # - run: pnpm install --prefer-offline
+      - run: pnpm install --prefer-offline
       - run: pnpm audit signatures
       - uses: actions/download-artifact@v3
         with:
-          name: build
+          name: dist
+          path: dist/
       - run: ls && npm publish --dry-run
         # Branches that will release new versions are defined in .releaserc.json
         # @TODO remove --dry-run after verifying everything is good to go
