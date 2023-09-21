@@ -134,7 +134,6 @@ jobs:
         with:
           name: dist
           path: dist/
-      - run: ls && npm publish --dry-run
         # Branches that will release new versions are defined in .releaserc.json
       - run: pnpx semantic-release
         # Don't allow interrupting the release step if the job is cancelled, as it can lead to an inconsistent state
