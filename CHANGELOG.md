@@ -5,6 +5,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.3](https://github.com/waspeer/sanity-plugin-iconify/compare/v1.0.2...v1.0.3) (2023-09-21)
+
+### Bug Fixes
+
+- **iconify-input:** provide a fallback when studio theme is undefined ([300c513](https://github.com/waspeer/sanity-plugin-iconify/commit/300c513db2e491fe0c14b2a1b455ba7f5d3d9096))
+- only call usequery inside queryclientprovider ([52aca1f](https://github.com/waspeer/sanity-plugin-iconify/commit/52aca1fd7c60e3c9c34ae9ab9d801179354f7489))
+
 ## [1.0.2](https://github.com/waspeer/sanity-plugin-iconify/compare/v1.0.1...v1.0.2) (2023-09-20)
 
 ### Bug Fixes
