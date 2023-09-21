@@ -1,5 +1,5 @@
-import { Flex, Stack, Text } from '@sanity/ui';
-import { useCallback } from 'react';
+import { Flex, RootTheme, Stack, Text, ThemeProvider, studioTheme, useTheme } from '@sanity/ui';
+import { useCallback, useMemo } from 'react';
 import { ObjectInputProps, set, unset } from 'sanity';
 import { IconifyCombobox } from './combobox';
 import { QueryClientProvider } from './lib/query-client';
@@ -26,6 +26,12 @@ export function IconifyInput(props: IconifyInputProps) {
     null;
   const showName = options?.showName ?? config?.showName ?? false;
 
+  const parentTheme = useTheme();
+  const theme: RootTheme = useMemo(
+    () => (parentTheme ? { ...parentTheme.sanity, color: studioTheme.color } : studioTheme),
+    [parentTheme],
+  );
+
   const handleSelect = useCallback(
     (icon: string) => {
       pushChange(icon === '' ? unset() : set(icon, ['name']));
@@ -35,6 +41,7 @@ export function IconifyInput(props: IconifyInputProps) {
 
   return (
     <QueryClientProvider>
+      <ThemeProvider theme={theme}>
         <Stack space={2}>
           <IconifyCombobox
             selectedIcon={selectedIcon}
@@ -44,6 +51,7 @@ export function IconifyInput(props: IconifyInputProps) {
 
           {showName && selectedIcon ? <IconifyNameDisplay name={selectedIcon} /> : null}
         </Stack>
+      </ThemeProvider>
     </QueryClientProvider>
   );
 }
