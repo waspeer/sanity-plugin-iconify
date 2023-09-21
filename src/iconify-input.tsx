@@ -1,12 +1,14 @@
 import { Flex, Stack, Text } from '@sanity/ui';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { useCallback } from 'react';
 import { ObjectInputProps, set, unset } from 'sanity';
 import { IconifyCombobox } from './combobox';
+import { QueryClientProvider } from './lib/query-client';
 import { IconOptions, IconifyPluginConfig } from './lib/types';
 import { usePrettyIconName } from './lib/use-pretty-icon-name';
 
-const queryClient = new QueryClient();
+// -------------- //
+// ICONIFY INPUT //
+// -------------- //
 
 interface IconifyInputProps extends ObjectInputProps {
   config: IconifyPluginConfig;
@@ -15,8 +17,7 @@ interface IconifyInputProps extends ObjectInputProps {
 export function IconifyInput(props: IconifyInputProps) {
   const { config, value, onChange: pushChange, schemaType } = props;
 
-  const selectedIcon = value?.name ?? null;
-  const prettyName = usePrettyIconName(selectedIcon);
+  const selectedIcon: string | null = value?.name ?? null;
 
   const options: IconOptions = schemaType.options;
   const collections =
@@ -33,32 +34,43 @@ export function IconifyInput(props: IconifyInputProps) {
   );
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <Stack space={2}>
-        <IconifyCombobox
-          selectedIcon={selectedIcon}
-          onSelect={handleSelect}
-          collections={collections}
-        />
+    <QueryClientProvider>
+        <Stack space={2}>
+          <IconifyCombobox
+            selectedIcon={selectedIcon}
+            onSelect={handleSelect}
+            collections={collections}
+          />
 
-        {showName && selectedIcon ? (
-          <Flex gap={1}>
-            <Text size={1} muted>
-              Selected:
-            </Text>
-
-            <Text size={1} weight="semibold">
-              {prettyName?.name ?? selectedIcon}
-            </Text>
-
-            {prettyName?.collection && (
-              <Text size={1} muted style={{ fontStyle: 'italic' }}>
-                by {prettyName?.collection}
-              </Text>
-            )}
-          </Flex>
-        ) : null}
-      </Stack>
+          {showName && selectedIcon ? <IconifyNameDisplay name={selectedIcon} /> : null}
+        </Stack>
     </QueryClientProvider>
+  );
+}
+
+interface IconifyNameDisplayProps {
+  name?: string | null;
+}
+
+function IconifyNameDisplay(props: IconifyNameDisplayProps) {
+  const { name } = props;
+  const prettyName = usePrettyIconName({ name });
+
+  return (
+    <Flex gap={1}>
+      <Text size={1} muted>
+        Selected:
+      </Text>
+
+      <Text size={1} weight="semibold">
+        {prettyName?.name ?? name}
+      </Text>
+
+      {prettyName?.collection && (
+        <Text size={1} muted style={{ fontStyle: 'italic' }}>
+          by {prettyName?.collection}
+        </Text>
+      )}
+    </Flex>
   );
 }

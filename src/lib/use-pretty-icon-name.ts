@@ -1,10 +1,19 @@
-import { stringToIcon } from '@iconify/utils';
+import { IconifyIconName, stringToIcon } from '@iconify/utils';
 import { sentenceCase } from 'change-case';
 import { useMemo } from 'react';
 import { useIconSetInfo } from './api';
 
-export function usePrettyIconName(name?: string | null) {
-  const iconMeta = useMemo(() => (name ? stringToIcon(name) : null), [name]);
+interface UsePrettyIconNameProps {
+  name?: string | null;
+  iconMeta?: IconifyIconName | null;
+}
+
+export function usePrettyIconName(props: UsePrettyIconNameProps) {
+  const { name } = props;
+  const iconMeta = useMemo(
+    () => props.iconMeta ?? (name ? stringToIcon(name) : null),
+    [name, props.iconMeta],
+  );
   const iconSetInfo = useIconSetInfo({ prefix: iconMeta?.prefix ?? null });
 
   return useMemo(
