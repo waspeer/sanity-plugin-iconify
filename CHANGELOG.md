@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.4](https://github.com/waspeer/sanity-plugin-iconify/compare/v1.0.3...v1.0.4) (2023-09-29)
+
+### Bug Fixes
+
+- fix logic error when resolving collections option ([7c8b472](https://github.com/waspeer/sanity-plugin-iconify/commit/7c8b472610611f63b1871868fe26415531bda2e2))
+
 ## [1.0.3](https://github.com/waspeer/sanity-plugin-iconify/compare/v1.0.2...v1.0.3) (2023-09-21)
 
 ### Bug Fixes
