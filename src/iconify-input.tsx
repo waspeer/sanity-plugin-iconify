@@ -21,8 +21,8 @@ export function IconifyInput(props: IconifyInputProps) {
 
   const options: IconOptions = schemaType.options;
   const collections =
-    (!options?.collections?.length && options.collections) ||
-    (!config?.collections?.length && config.collections) ||
+    (!!options?.collections?.length && options.collections) ||
+    (!!config?.collections?.length && config.collections) ||
     null;
   const showName = options?.showName ?? config?.showName ?? false;
 
