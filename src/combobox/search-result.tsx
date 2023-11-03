@@ -35,7 +35,11 @@ export function SearchResults(props: SearchResultsProps) {
     <Combobox.Options style={{ opacity: state === 'stale' ? 0.5 : 1 }}>
       {data!.map((icon) => (
         <Combobox.Option key={icon} value={icon}>
-          {({ active }) => <Button mode="bleed" icon={<Icon icon={icon} />} selected={active} />}
+          {({ active }) => (
+            <Button padding={3} mode="bleed" selected={active}>
+              <Icon icon={icon} width="100%" height="100%" />
+            </Button>
+          )}
         </Combobox.Option>
       ))}
     </Combobox.Options>
