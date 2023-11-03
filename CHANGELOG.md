@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.1](https://github.com/waspeer/sanity-plugin-iconify/compare/v1.1.0...v1.1.1) (2023-11-03)
+
+### Bug Fixes
+
+- **package.json:** add overrides to fix audit issues (with correct commit message this time) ([f632b03](https://github.com/waspeer/sanity-plugin-iconify/commit/f632b03bd8b7962a98a91b073ab897cc2d7b01af))
+
 ## [1.1.0](https://github.com/waspeer/sanity-plugin-iconify/compare/v1.0.4...v1.1.0) (2023-11-03)
 
 ### Features
