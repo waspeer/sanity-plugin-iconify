@@ -1,8 +1,8 @@
 import { IconifyInfo } from '@iconify/types';
-import { useQuery, useQueryClient } from '@tanstack/react-query';
-import { IconifySearchResult } from './types';
+import { keepPreviousData, useQuery, useQueryClient } from '@tanstack/react-query';
 import { useCallback, useState } from 'react';
 import { useDebounce } from 'use-debounce';
+import { IconifySearchResult } from './types';
 
 const BASE_API_URL = 'https://api.iconify.design';
 
@@ -44,7 +44,7 @@ export function useSearch({ collections }: { collections: string[] | null }) {
     [setDebouncedTerm],
   );
 
-  const { isInitialLoading, isError, error, data, isPreviousData } = useQuery<string[], Error>({
+  const { isLoading, isError, error, data, isPlaceholderData } = useQuery<string[], Error>({
     queryKey: ['search', collections, debouncedTerm],
     queryFn: async ({ signal }) => {
       const url = new URL(`/search`, BASE_API_URL);
@@ -68,7 +68,7 @@ export function useSearch({ collections }: { collections: string[] | null }) {
       return result?.icons ?? [];
     },
     enabled: debouncedTerm.length > 0,
-    keepPreviousData: debouncedTerm.length > 0,
+    placeholderData: keepPreviousData,
     staleTime: 5 * 60 * 1000, // 5 minutes
   });
 
@@ -76,11 +76,11 @@ export function useSearch({ collections }: { collections: string[] | null }) {
     term,
     setTerm: updateTerm,
     debouncedTerm,
-    isInitialLoading,
+    isLoading,
     isError,
     error,
     data,
-    isPreviousData,
+    isPreviousData: isPlaceholderData,
   };
 }
 

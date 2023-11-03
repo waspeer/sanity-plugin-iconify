@@ -21,7 +21,7 @@ export function IconifyCombobox(props: IconifyComboboxProps) {
   const toast = useToast();
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const { term, setTerm, debouncedTerm, isInitialLoading, isError, error, data, isPreviousData } =
+  const { term, setTerm, debouncedTerm, isLoading, isError, error, data, isPreviousData } =
     useSearch({
       collections,
     });
@@ -79,7 +79,7 @@ export function IconifyCombobox(props: IconifyComboboxProps) {
                   <SearchResults
                     state={match<boolean>(true)
                       .returnType<SearchResultsProps['state']>()
-                      .with(isInitialLoading, () => 'loading')
+                      .with(isLoading, () => 'loading')
                       .with(!debouncedTerm, () => 'initial')
                       .with(isError, () => 'error')
                       .with(!data || data.length === 0, () => 'empty')
