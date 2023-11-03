@@ -54,6 +54,7 @@ jobs:
           cache: pnpm
           node-version: lts/*
       - run: pnpm install
+      - run: pnpm audit signatures
       - run: pnpm run generate-types
         # Linting can be skipped
       - run: pnpm run --if-present lint
@@ -128,7 +129,7 @@ jobs:
         with:
           cache: pnpm
           node-version: lts/*
-      - run: pnpm install --prefer-offline
+      - run: pnpm install
       - run: pnpm audit signatures
       - uses: actions/download-artifact@v3
         with:
