@@ -60,20 +60,20 @@
     "use-debounce": "^9.0.4"
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.7.1",
-    "@commitlint/config-conventional": "^17.7.0",
-    "@commitlint/load": "^17.7.1",
-    "@iconify/json": "^2.2.116",
+    "@commitlint/cli": "^18.2.0",
+    "@commitlint/config-conventional": "^18.1.0",
+    "@commitlint/load": "^18.2.0",
+    "@iconify/json": "^2.2.137",
     "@iconify/types": "^2.0.0",
-    "@sanity/pkg-utils": "^2.4.9",
+    "@sanity/pkg-utils": "^3.2.2",
     "@sanity/plugin-kit": "^3.1.10",
-    "@sanity/semantic-release-preset": "^4.1.4",
+    "@sanity/semantic-release-preset": "^4.1.6",
     "@tanstack/eslint-plugin-query": "^4.34.1",
     "@tanstack/react-query-devtools": "^4.35.3",
-    "@types/react": "^18.2.21",
-    "@types/styled-components": "^5.1.27",
-    "@typescript-eslint/eslint-plugin": "^6.7.0",
-    "@typescript-eslint/parser": "^6.7.0",
+    "@types/react": "^18.2.34",
+    "@types/styled-components": "^5.1.29",
+    "@typescript-eslint/eslint-plugin": "^6.9.1",
+    "@typescript-eslint/parser": "^6.9.1",
     "eslint": "^8.49.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-config-sanity": "^6.0.0",
@@ -104,6 +104,12 @@
   "sanityPlugin": {
     "verifyPackage": {
       "scripts": false
+    }
+  },
+  "pnpm": {
+    "overrides": {
+      "postcss@<8.4.31": ">=8.4.31",
+      "@babel/traverse@<7.23.2": ">=7.23.2"
     }
   }
 }
