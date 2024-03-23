@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.2](https://github.com/waspeer/sanity-plugin-iconify/compare/v1.1.1...v1.1.2) (2024-03-23)
+
+### Bug Fixes
+
+- allow styled-components version 6 in peer deps ([d517bb5](https://github.com/waspeer/sanity-plugin-iconify/commit/d517bb5f74b5cf27ecd10045b685c9ef4ff3149f))
+
 ## [1.1.1](https://github.com/waspeer/sanity-plugin-iconify/compare/v1.1.0...v1.1.1) (2023-11-03)
 
 ### Bug Fixes
