@@ -96,7 +96,7 @@
   "peerDependencies": {
     "react": "^18",
     "sanity": "^3",
-    "styled-components": "^5"
+    "styled-components": "^5 || ^6.1"
   },
   "engines": {
     "node": ">=14"
