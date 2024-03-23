@@ -105,7 +105,9 @@
   "pnpm": {
     "overrides": {
       "@babel/traverse@<7.23.2": ">=7.23.2",
-      "postcss@<8.4.31": ">=8.4.31"
+      "postcss@<8.4.31": ">=8.4.31",
+      "follow-redirects@<1.15.4": ">=1.15.4",
+      "follow-redirects@<=1.15.5": ">=1.15.6"
     }
   },
   "sanityPlugin": {
