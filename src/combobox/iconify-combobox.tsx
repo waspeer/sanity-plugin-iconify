@@ -2,6 +2,7 @@ import { Combobox } from '@headlessui/react';
 import { Popover, useToast } from '@sanity/ui';
 import { ChangeEventHandler, useCallback, useEffect, useId, useRef } from 'react';
 import { match } from 'ts-pattern';
+
 import { useSearch } from '../lib/api';
 import { ComboboxWrapper, OptionsWrapper } from './iconify-combobox.styles';
 import { SearchInput } from './search-input';

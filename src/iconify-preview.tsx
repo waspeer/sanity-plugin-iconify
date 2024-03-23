@@ -1,8 +1,9 @@
 import { Icon } from '@iconify/react';
-import { PreviewProps } from 'sanity';
-import { usePrettyIconName } from './lib/use-pretty-icon-name';
 import { IconifyIconName, stringToIcon } from '@iconify/utils';
+import { PreviewProps } from 'sanity';
+
 import { QueryClientProvider } from './lib/query-client';
+import { usePrettyIconName } from './lib/use-pretty-icon-name';
 
 // --------------- //
 // ICONIFY PREVIEW //

@@ -1,9 +1,10 @@
-import { Flex, RootTheme, Stack, Text, ThemeProvider, studioTheme, useTheme } from '@sanity/ui';
+import { Flex, RootTheme, Stack, studioTheme, Text, ThemeProvider, useTheme } from '@sanity/ui';
 import { useCallback, useMemo } from 'react';
 import { ObjectInputProps, set, unset } from 'sanity';
+
 import { IconifyCombobox } from './combobox';
 import { QueryClientProvider } from './lib/query-client';
-import { IconOptions, IconifyPluginConfig } from './lib/types';
+import { IconifyPluginConfig, IconOptions } from './lib/types';
 import { usePrettyIconName } from './lib/use-pretty-icon-name';
 
 // -------------- //

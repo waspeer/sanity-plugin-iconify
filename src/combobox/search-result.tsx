@@ -1,6 +1,7 @@
 import { Combobox } from '@headlessui/react';
 import { Icon } from '@iconify/react';
 import { Button } from '@sanity/ui';
+
 import { MessageWrapper } from './iconify-combobox.styles';
 
 // -------------- //

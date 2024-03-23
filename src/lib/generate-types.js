@@ -1,5 +1,6 @@
-import { lookupCollections } from '@iconify/json';
 import { writeFile } from 'node:fs/promises';
+
+import { lookupCollections } from '@iconify/json';
 
 /**
  * Generates TypeScript types for available Iconify icon collections.
