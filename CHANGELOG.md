@@ -5,6 +5,16 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0](https://github.com/waspeer/sanity-plugin-iconify/compare/v1.1.2...v2.0.0) (2024-06-13)
+
+### ⚠ BREAKING CHANGES
+
+- deprecate node 14
+
+### Build System
+
+- upgrade deps ([58634a9](https://github.com/waspeer/sanity-plugin-iconify/commit/58634a976e822f375e90d331420ccd4d9625942e))
+
 ## [1.1.2](https://github.com/waspeer/sanity-plugin-iconify/compare/v1.1.1...v1.1.2) (2024-03-23)
 
 ### Bug Fixes
