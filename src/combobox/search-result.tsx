@@ -1,7 +1,6 @@
-import { Combobox } from '@headlessui/react';
+import { ComboboxOption, ComboboxOptions } from '@headlessui/react';
 import { Icon } from '@iconify/react';
 import { Button } from '@sanity/ui';
-
 import { MessageWrapper } from './iconify-combobox.styles';
 
 // -------------- //
@@ -33,16 +32,16 @@ export function SearchResults(props: SearchResultsProps) {
   }
 
   return (
-    <Combobox.Options style={{ opacity: state === 'stale' ? 0.5 : 1 }}>
+    <ComboboxOptions style={{ opacity: state === 'stale' ? 0.5 : 1 }}>
       {data!.map((icon) => (
-        <Combobox.Option key={icon} value={icon}>
-          {({ active }) => (
-            <Button padding={3} mode="bleed" selected={active}>
+        <ComboboxOption key={icon} value={icon}>
+          {({ focus }) => (
+            <Button padding={3} mode="bleed" selected={focus}>
               <Icon icon={icon} width="100%" height="100%" />
             </Button>
           )}
-        </Combobox.Option>
+        </ComboboxOption>
       ))}
-    </Combobox.Options>
+    </ComboboxOptions>
   );
 }

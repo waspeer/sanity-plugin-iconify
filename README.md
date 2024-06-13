@@ -11,6 +11,7 @@
 ---
 
 ## 📒 Table of Contents
+
 - [📒 Table of Contents](#-table-of-contents)
 - [📍 Overview](#-overview)
 - [🚀 Getting Started](#-getting-started)
@@ -29,7 +30,6 @@
 - [📄 License](#-license)
 
 ---
-
 
 ## 📍 Overview
 
@@ -158,9 +158,11 @@ import { defineConfig } from 'sanity';
 
 export default defineConfig({
   //...
-  plugins: [iconify({
-    showName: true, // <-- Shows the selected icon name and collection underneath all icon pickers
-  })],
+  plugins: [
+    iconify({
+      showName: true, // <-- Shows the selected icon name and collection underneath all icon pickers
+    }),
+  ],
 });
 ```
 
@@ -200,7 +202,7 @@ This name can be utilized in your frontend to render the icon dynamically. For i
 ```tsx
 import { Icon } from '@iconify/react';
 
-<Icon icon={icon.name} />
+<Icon icon={icon.name} />;
 ```
 
 This will render an SVG on demand, which looks great and is very performant. There are also libraries/API's for:
@@ -214,7 +216,7 @@ For further information, you may refer to the [official documentation](https://i
 
 ### Preview
 
-The plugin includes a custom list preview that automatically renders the selected icon accompanied by its name and collection. 
+The plugin includes a custom list preview that automatically renders the selected icon accompanied by its name and collection.
 
 <img width="618" alt="array-of-icons" src="https://github.com/waspeer/sanity-plugin-iconify/assets/11842931/0c1c32a1-e796-434f-ae64-c134f9b51ab9">
 
@@ -255,18 +257,24 @@ Contributions, whether in the form of code enhancements, bug fixes, documentatio
 1. Fork the project repository. This creates a copy of the project on your account that you can modify without affecting the original project.
 2. Clone the forked repository to your local machine using a Git client like Git or GitHub Desktop.
 3. Create a new branch with a descriptive name (e.g., `new-feature-branch` or `bugfix-issue-123`).
+
 ```sh
 git checkout -b new-feature-branch
 ```
+
 1. Make changes to the project's codebase.
 2. Commit your changes to your local branch with a clear conventional commit message that explains the changes you've made.
+
 ```sh
 git commit -m 'feat: Implemented new feature.'
 ```
+
 1. Push your changes to your forked repository on GitHub using the following command
+
 ```sh
 git push origin new-feature-branch
 ```
+
 1. Create a new pull request to the original project repository. In the pull request, describe the changes you've made and why they are necessary. Make sure to update or add documentation as relevant. I will review your changes, provide feedback, or merge them into the main branch.
 
 ## 🧪 Develop & test

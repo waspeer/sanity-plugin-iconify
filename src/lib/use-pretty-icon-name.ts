@@ -1,7 +1,7 @@
-import { IconifyIconName, stringToIcon } from '@iconify/utils';
+import type { IconifyIconName } from '@iconify/utils';
+import { stringToIcon } from '@iconify/utils';
 import { sentenceCase } from 'change-case';
 import { useMemo } from 'react';
-
 import { useIconSetInfo } from './api';
 
 interface UsePrettyIconNameProps {

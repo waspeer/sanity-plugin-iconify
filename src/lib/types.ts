@@ -1,4 +1,4 @@
-import { IconifyInfo } from '@iconify/types';
+import type { IconifyInfo } from '@iconify/types';
 import type { BaseSchemaDefinition } from 'sanity';
 
 // If this line errors, the type definitions have not been generated.

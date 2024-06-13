@@ -1,9 +1,8 @@
-import { IconifyInfo } from '@iconify/types';
+import type { IconifyInfo } from '@iconify/types';
 import { keepPreviousData, useQuery, useQueryClient } from '@tanstack/react-query';
 import { useCallback, useState } from 'react';
 import { useDebounce } from 'use-debounce';
-
-import { IconifySearchResult } from './types';
+import type { IconifySearchResult } from './types';
 
 const BASE_API_URL = 'https://api.iconify.design';
 

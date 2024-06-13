@@ -1,5 +1,4 @@
 import { writeFile } from 'node:fs/promises';
-
 import { lookupCollections } from '@iconify/json';
 
 /**

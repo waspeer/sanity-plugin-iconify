@@ -1,7 +1,8 @@
-import { Combobox } from '@headlessui/react';
+import { ComboboxInput } from '@headlessui/react';
 import { Icon } from '@iconify/react';
 import { TextInput } from '@sanity/ui';
-import { ChangeEventHandler, forwardRef } from 'react';
+import type { ChangeEventHandler } from 'react';
+import { forwardRef } from 'react';
 
 // ------------ //
 // SEARCH INPUT //
@@ -11,13 +12,14 @@ interface SearchInputProps {
   term: string;
   selectedIcon: string | null;
   onChange: ChangeEventHandler<HTMLInputElement>;
+  suffix?: React.ReactNode;
 }
 
 export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>((props, ref) => {
-  const { term, selectedIcon, onChange } = props;
+  const { term, selectedIcon, onChange, suffix } = props;
 
   return (
-    <Combobox.Input
+    <ComboboxInput
       as={TextInput}
       ref={ref}
       inputMode="search"
@@ -25,6 +27,7 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>((props
       onChange={onChange}
       icon={selectedIcon ? <Icon icon={selectedIcon} /> : null}
       placeholder={selectedIcon ? 'Search and replace selected icon...' : 'Search for an icon...'}
+      suffix={suffix}
     />
   );
 });

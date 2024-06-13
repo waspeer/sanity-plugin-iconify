@@ -1,8 +1,8 @@
-import { definePlugin, FieldProps, ObjectInputProps } from 'sanity';
-
+import type { FieldProps, ObjectInputProps } from 'sanity';
+import { definePlugin } from 'sanity';
 import { IconifyInput } from './iconify-input';
 import { IconifyPreview } from './iconify-preview';
-import { IconifyPluginConfig } from './lib/types';
+import type { IconifyPluginConfig } from './lib/types';
 
 /**
  * Usage in `sanity.config.ts` (or .js)
