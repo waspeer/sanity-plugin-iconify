@@ -6,9 +6,10 @@ settings:
 
 overrides:
   '@babel/traverse@<7.23.2': '>=7.23.2'
-  postcss@<8.4.31: '>=8.4.31'
+  conventional-changelog-conventionalcommits: ^8
   follow-redirects@<1.15.4: '>=1.15.4'
   follow-redirects@<=1.15.5: '>=1.15.6'
+  postcss@<8.4.31: '>=8.4.31'
 
 importers:
 
@@ -2710,10 +2711,6 @@ packages:
   conventional-changelog-angular@8.0.0:
     resolution: {integrity: sha512-CLf+zr6St0wIxos4bmaKHRXWAcsCXrJU6F4VdNDrGRK3B8LDLKoX3zuMV5GhtbGkVR/LohZ6MT6im43vZLSjmA==}
     engines: {node: '>=18'}
-
-  conventional-changelog-conventionalcommits@7.0.2:
-    resolution: {integrity: sha512-NKXYmMR/Hr1DevQegFB4MwfM5Vv0m4UIxKZTTYuD98lpTknaZlSRrDOG4X7wIXpGkfsYxZTghUN+Qq+T0YQI7w==}
-    engines: {node: '>=16'}
 
   conventional-changelog-conventionalcommits@8.0.0:
     resolution: {integrity: sha512-eOvlTO6OcySPyyyk8pKz2dP4jjElYunj9hn9/s0OB+gapTO8zwS9UQWrZ1pmF2hFs3vw1xhonOLGcGjy/zgsuA==}
@@ -7620,7 +7617,7 @@ snapshots:
   '@commitlint/config-conventional@19.2.2':
     dependencies:
       '@commitlint/types': 19.0.3
-      conventional-changelog-conventionalcommits: 7.0.2
+      conventional-changelog-conventionalcommits: 8.0.0
 
   '@commitlint/config-validator@19.0.3':
     dependencies:
@@ -9961,10 +9958,6 @@ snapshots:
       compare-func: 2.0.0
 
   conventional-changelog-angular@8.0.0:
-    dependencies:
-      compare-func: 2.0.0
-
-  conventional-changelog-conventionalcommits@7.0.2:
     dependencies:
       compare-func: 2.0.0
 
