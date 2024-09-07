@@ -1,0 +1,12 @@
+{
+  "$schema": "https://unpkg.com/release-it@17/schema/release-it.json",
+  "hooks": {
+    "before:init": ["pnpm audit signatures", "pnpm run generate-types", "pnpm run build"]
+  },
+  "plugins": {
+    "@release-it/conventional-changelog": {
+      "preset": "angular",
+      "infile": "CHANGELOG.md"
+    }
+  }
+}
