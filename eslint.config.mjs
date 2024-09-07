@@ -2,16 +2,11 @@
 import * as query from '@tanstack/eslint-plugin-query';
 import { configs } from '@waspeer/config/eslint';
 
-/** @type {import('eslint').Linter.FlatConfig[]} */
+/** @type {import('eslint').Linter.Config[]} */
 const config = [
   configs.base,
+  (query.default.configs['flat/recommended']),
   [
-    {
-      plugins: {
-        '@tanstack/query': /** @type {any} */ (query),
-      },
-      rules: /** @type {any} */ (query.configs.recommended.rules),
-    },
     {
       ignores: ['v2-incompatible.js', '*.cjs', 'dist', 'package.config.ts', '*.gen.ts'],
     },

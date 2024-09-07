@@ -28,12 +28,6 @@ export function IconifyInput(props: IconifyInputProps) {
     null;
   const showName = options?.showName ?? config?.showName ?? false;
 
-  // const parentTheme = useTheme();
-  // const theme: RootTheme = useMemo(
-  //   () => (parentTheme ? { ...parentTheme.sanity, color: studioTheme.color } : studioTheme),
-  //   [parentTheme],
-  // );
-
   const handleSelect = useCallback(
     (icon: string) => {
       pushChange(icon === '' ? unset() : set(icon, ['name']));
@@ -62,7 +56,7 @@ interface IconifyNameDisplayProps {
   name?: string | null;
 }
 
-function IconifyNameDisplay(props: IconifyNameDisplayProps) {
+export function IconifyNameDisplay(props: IconifyNameDisplayProps) {
   const { name } = props;
   const prettyName = usePrettyIconName({ name });
 

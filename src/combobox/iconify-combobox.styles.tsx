@@ -12,29 +12,29 @@ export const OptionsWrapper = styled(Box)`
   padding: 0.5rem;
 
   & [role='listbox'] {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(min(100%, 2.5rem), 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 0.5rem;
     margin: 0;
     padding: 0;
     list-style: none;
-
-    @media (min-width: 650px) {
-      grid-template-columns: repeat(10, minmax(min(100%, 2.5rem), 1fr));
-    }
   }
 
   & [role='option'] {
     display: grid;
     place-items: center;
+    width: clamp(3rem, 10vw, 4rem);
 
     & button {
       cursor: pointer;
-      aspect-ratio: 1;
       width: 100%;
 
       & > [data-ui='Box'] {
         display: flex;
+      }
+
+      & svg {
+        aspect-ratio: 1;
       }
     }
   }

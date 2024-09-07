@@ -45,46 +45,49 @@
     "prepublish-only": "run-s build",
     "watch": "pkg-utils watch --strict",
     "generate-types": "node src/lib/generate-types",
-    "prepare": "husky"
+    "prepare": "husky",
+    "dev": "tsx dev/vite.ts"
   },
   "browserslist": "extends @sanity/browserslist-config",
   "dependencies": {
-    "@headlessui/react": "^2.0.4",
-    "@iconify/react": "^5.0.1",
-    "@iconify/utils": "^2.1.24",
-    "@sanity/icons": "^3.2.0",
+    "@iconify/react": "^5.0.2",
+    "@iconify/utils": "^2.1.32",
+    "@sanity/icons": "^3.4.0",
     "@sanity/incompatible-plugin": "^1.0.4",
-    "@sanity/ui": "^2.3.5",
-    "@tanstack/react-query": "^5.45.0",
+    "@sanity/ui": "^2.8.9",
+    "@tanstack/react-query": "^5.55.0",
     "change-case": "^5.4.4",
-    "ts-pattern": "^5.2.0",
-    "use-debounce": "^10.0.1"
+    "downshift": "^9.0.8",
+    "ts-pattern": "^5.3.1",
+    "use-debounce": "^10.0.3"
   },
   "devDependencies": {
-    "@commitlint/cli": "^19.3.0",
-    "@commitlint/config-conventional": "^19.2.2",
-    "@commitlint/load": "^19.2.0",
-    "@iconify/json": "^2.2.218",
+    "@commitlint/cli": "^19.4.1",
+    "@commitlint/config-conventional": "^19.4.1",
+    "@commitlint/load": "^19.4.0",
+    "@iconify/json": "^2.2.245",
     "@iconify/types": "^2.0.0",
-    "@sanity/pkg-utils": "^6.9.3",
-    "@sanity/plugin-kit": "^4.0.17",
+    "@sanity/pkg-utils": "^6.11.0",
+    "@sanity/plugin-kit": "^4.0.18",
     "@sanity/semantic-release-preset": "^5.0.0",
-    "@tanstack/eslint-plugin-query": "^5.43.1",
-    "@tanstack/react-query-devtools": "^5.45.0",
-    "@types/react": "^18.3.3",
+    "@tanstack/eslint-plugin-query": "^5.53.0",
+    "@tanstack/react-query-devtools": "^5.55.0",
+    "@types/react": "^18.3.5",
     "@types/styled-components": "^5.1.34",
-    "@waspeer/config": "^2.2.0",
-    "eslint": "^9.4.0",
-    "husky": "^9.0.11",
-    "lint-staged": "^15.2.7",
+    "@waspeer/config": "^2.3.2",
+    "eslint": "^9.9.1",
+    "husky": "^9.1.5",
+    "lint-staged": "^15.2.10",
     "npm-run-all": "^4.1.5",
-    "prettier": "^3.3.2",
+    "prettier": "^3.3.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-is": "^18.3.1",
-    "rimraf": "^5.0.7",
-    "sanity": "^3.46.0",
-    "typescript": "^5.4.5"
+    "rimraf": "^6.0.1",
+    "sanity": "^3.57.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.5.4",
+    "vite": "^5.4.3"
   },
   "peerDependencies": {
     "react": "^18",
@@ -96,11 +99,7 @@
   },
   "pnpm": {
     "overrides": {
-      "@babel/traverse@<7.23.2": ">=7.23.2",
-      "conventional-changelog-conventionalcommits": "^8",
-      "follow-redirects@<1.15.4": ">=1.15.4",
-      "follow-redirects@<=1.15.5": ">=1.15.6",
-      "postcss@<8.4.31": ">=8.4.31"
+      "eslint": "^9"
     }
   },
   "sanityPlugin": {

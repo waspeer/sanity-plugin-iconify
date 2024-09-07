@@ -1,10 +1,9 @@
-import { Combobox } from '@headlessui/react';
 import { Popover, useToast } from '@sanity/ui';
-import type { ChangeEventHandler } from 'react';
+import { useCombobox } from 'downshift';
 import { useCallback, useEffect, useId, useRef } from 'react';
 import { match } from 'ts-pattern';
 import { useSearch } from '../lib/api';
-import { ComboboxWrapper, OptionsWrapper } from './iconify-combobox.styles';
+import { OptionsWrapper } from './iconify-combobox.styles';
 import { SearchInput } from './search-input';
 import type { SearchResultsProps } from './search-result';
 import { SearchResults } from './search-result';
@@ -28,20 +27,34 @@ export function IconifyCombobox(props: IconifyComboboxProps) {
       collections,
     });
 
-  const handleTermChange: ChangeEventHandler<HTMLInputElement> = useCallback(
-    (event) => setTerm(event.target.value),
-    [setTerm],
-  );
-
-  const handleSelect = useCallback(
-    (icon: string) => {
-      pushSelection(icon);
-      setTerm('', true);
+  const {
+    isOpen,
+    getMenuProps,
+    getInputProps,
+    highlightedIndex,
+    getItemProps,
+    selectItem,
+    setInputValue,
+  } = useCombobox({
+    items: data ?? [],
+    inputValue: term,
+    onInputValueChange({ inputValue, selectedItem }) {
+      if (inputValue !== selectedItem) {
+        setTerm(inputValue);
+      }
     },
-    [pushSelection, setTerm],
-  );
+    onSelectedItemChange({ selectedItem }) {
+      pushSelection(selectedItem);
+      setTerm('', true);
+      setInputValue('');
+    },
+  });
 
-  const handleUnset = useCallback(() => handleSelect(''), [handleSelect]);
+  const handleUnset = useCallback(() => {
+    pushSelection('');
+    setTerm('', true);
+    selectItem('');
+  }, []);
 
   useEffect(() => {
     if (isError) {
@@ -57,45 +70,41 @@ export function IconifyCombobox(props: IconifyComboboxProps) {
   }, [error, id, isError, toast]);
 
   return (
-    <ComboboxWrapper>
-      <Combobox onChange={handleSelect}>
-        {({ open }) => (
-          <>
-            <SearchInput
-              ref={inputRef}
-              term={term}
-              selectedIcon={selectedIcon}
-              onChange={handleTermChange}
-              suffix={selectedIcon ? <UnsetButton onUnset={handleUnset} /> : null}
-            />
+    <div>
+      {/* @ts-expect-error wrong typings */}
+      <SearchInput
+        {...getInputProps({ ref: inputRef })}
+        selectedIcon={selectedIcon}
+        suffix={selectedIcon ? <UnsetButton onUnset={handleUnset} /> : null}
+      />
 
-            <Popover
-              open={open}
-              placement="bottom"
-              arrow={false}
-              matchReferenceWidth
-              portal
-              constrainSize
-              referenceElement={inputRef.current}
-              content={
-                <OptionsWrapper>
-                  <SearchResults
-                    state={match<boolean>(true)
-                      .returnType<SearchResultsProps['state']>()
-                      .with(isLoading, () => 'loading')
-                      .with(!debouncedTerm, () => 'initial')
-                      .with(isError, () => 'error')
-                      .with(!data || data.length === 0, () => 'empty')
-                      .with(isPreviousData, () => 'stale')
-                      .otherwise(() => 'data')}
-                    data={data}
-                  />
-                </OptionsWrapper>
-              }
+      <Popover
+        open={true}
+        style={{ display: isOpen ? 'block' : 'none' }}
+        placement="bottom"
+        arrow={false}
+        matchReferenceWidth
+        constrainSize
+        referenceElement={inputRef.current}
+        content={
+          <OptionsWrapper>
+            <SearchResults
+              {...getMenuProps()}
+              state={match<boolean>(true)
+                .returnType<SearchResultsProps['state']>()
+                .with(isLoading, () => 'loading')
+                .with(!debouncedTerm, () => 'initial')
+                .with(isError, () => 'error')
+                .with(!data || data.length === 0, () => 'empty')
+                .with(isPreviousData, () => 'stale')
+                .otherwise(() => 'data')}
+              data={data}
+              getItemProps={getItemProps}
+              highlightedIndex={highlightedIndex}
             />
-          </>
-        )}
-      </Combobox>
-    </ComboboxWrapper>
+          </OptionsWrapper>
+        }
+      />
+    </div>
   );
 }
