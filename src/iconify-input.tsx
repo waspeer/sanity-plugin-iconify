@@ -8,10 +8,6 @@ import { QueryClientProvider } from './lib/query-client';
 import type { IconifyPluginConfig, IconOptions } from './lib/types';
 import { usePrettyIconName } from './lib/use-pretty-icon-name';
 
-// -------------- //
-// ICONIFY INPUT //
-// -------------- //
-
 interface IconifyInputProps extends ObjectInputProps {
   config: IconifyPluginConfig;
 }
