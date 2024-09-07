@@ -1,0 +1,14 @@
+commit-msg:
+  scripts:
+    'commitlint.sh':
+      runner: bash
+
+pre-commit:
+  parallel: true
+  commands:
+    eslint:
+      run: npx eslint --fix {staged_files}
+      stage_fixed: true
+    prettier:
+      run: npx prettier --write {staged_files}
+      stage_fixed: true

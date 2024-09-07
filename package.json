@@ -45,7 +45,6 @@
     "prepublish-only": "run-s build",
     "watch": "pkg-utils watch --strict",
     "generate-types": "node src/lib/generate-types",
-    "prepare": "husky",
     "dev": "tsx dev/vite.ts"
   },
   "browserslist": "extends @sanity/browserslist-config",
@@ -76,7 +75,7 @@
     "@types/styled-components": "^5.1.34",
     "@waspeer/config": "^2.3.2",
     "eslint": "^9.9.1",
-    "husky": "^9.1.5",
+    "lefthook": "^1.7.15",
     "lint-staged": "^15.2.10",
     "npm-run-all": "^4.1.5",
     "prettier": "^3.3.3",
