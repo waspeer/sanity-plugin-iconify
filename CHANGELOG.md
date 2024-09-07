@@ -1,3 +1,9 @@
+## [2.0.1](https://github.com/waspeer/sanity-plugin-iconify/compare/v2.0.0...v2.0.1) (2024-09-07)
+
+### Bug Fixes
+
+- migrate to downshift ([ef17200](https://github.com/waspeer/sanity-plugin-iconify/commit/ef17200b70496f54520fcfe70d8ea610f665cef5))
+
 ## [2.0.0](https://github.com/waspeer/sanity-plugin-iconify/compare/v1.1.2...v2.0.0) (2024-06-13)
 
 ### ⚠ BREAKING CHANGES
