@@ -1,5 +1,8 @@
 {
   "$schema": "https://unpkg.com/release-it@17/schema/release-it.json",
+  "git": {
+    "commitMessage": "chore: release ${version}"
+  },
   "hooks": {
     "before:init": ["pnpm audit signatures", "pnpm run generate-types", "pnpm run build"]
   },

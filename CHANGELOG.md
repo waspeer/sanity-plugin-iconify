@@ -1,10 +1,3 @@
-<!-- markdownlint-disable --><!-- textlint-disable -->
-
-# 📓 Changelog
-
-All notable changes to this project will be documented in this file. See
-[Conventional Commits](https://conventionalcommits.org) for commit guidelines.
-
 ## [2.0.0](https://github.com/waspeer/sanity-plugin-iconify/compare/v1.1.2...v2.0.0) (2024-06-13)
 
 ### ⚠ BREAKING CHANGES
