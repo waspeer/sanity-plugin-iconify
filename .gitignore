@@ -60,3 +60,6 @@ yalc.lock
 dist
 
 *.gen.ts
+
+# TypeScript incremental compilation cache
+*.tsbuildinfo
