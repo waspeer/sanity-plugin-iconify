@@ -1,3 +1,11 @@
+# Changelog
+
+## [2.0.2](https://github.com/waspeer/sanity-plugin-iconify/compare/v2.0.1...v2.0.2) (2025-05-01)
+
+### Bug Fixes
+
+- type error ([66d61d4](https://github.com/waspeer/sanity-plugin-iconify/commit/66d61d42f0685031e0e7fafdaef8f4510b57221b))
+
 ## [2.0.1](https://github.com/waspeer/sanity-plugin-iconify/compare/v2.0.0...v2.0.1) (2024-09-07)
 
 ### Bug Fixes
