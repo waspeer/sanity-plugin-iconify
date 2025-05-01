@@ -44,9 +44,11 @@ export function IconifyCombobox(props: IconifyComboboxProps) {
       }
     },
     onSelectedItemChange({ selectedItem }) {
-      pushSelection(selectedItem);
-      setTerm('', true);
-      setInputValue('');
+      if (selectedItem) {
+        pushSelection(selectedItem);
+        setTerm('', true);
+        setInputValue('');
+      }
     },
   });
 
