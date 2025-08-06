@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.0.3](https://github.com/waspeer/sanity-plugin-iconify/compare/v2.0.2...v2.0.3) (2025-08-06)
+
+### Bug Fixes
+
+- package.json to reduce vulnerabilities ([7b9c29d](https://github.com/waspeer/sanity-plugin-iconify/commit/7b9c29dae5f1ab0eb348dd6b92010c5699ee19e5))
+
 ## [2.0.2](https://github.com/waspeer/sanity-plugin-iconify/compare/v2.0.1...v2.0.2) (2025-05-01)
 
 ### Bug Fixes
