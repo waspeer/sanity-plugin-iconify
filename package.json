@@ -55,7 +55,7 @@
     "@iconify/utils": "^2.3.0",
     "@sanity/icons": "^3.7.0",
     "@sanity/incompatible-plugin": "^1.0.5",
-    "@sanity/ui": "^2.15.14",
+    "@sanity/ui": "^3.0.0",
     "@tanstack/react-query": "^5.75.0",
     "change-case": "^5.4.4",
     "downshift": "^9.0.9",
