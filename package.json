@@ -51,52 +51,52 @@
   },
   "browserslist": "extends @sanity/browserslist-config",
   "dependencies": {
-    "@iconify/react": "^6.0.0",
-    "@iconify/utils": "^2.3.0",
-    "@sanity/icons": "^3.7.0",
+    "@iconify/react": "^6.0.2",
+    "@iconify/utils": "^3.0.2",
+    "@sanity/icons": "^3.7.4",
     "@sanity/incompatible-plugin": "^1.0.5",
-    "@sanity/ui": "^3.0.0",
-    "@tanstack/react-query": "^5.75.0",
+    "@sanity/ui": "^3.1.3",
+    "@tanstack/react-query": "^5.89.0",
     "change-case": "^5.4.4",
-    "downshift": "^9.0.9",
-    "ts-pattern": "^5.7.0",
-    "use-debounce": "^10.0.4"
+    "downshift": "^9.0.10",
+    "ts-pattern": "^5.8.0",
+    "use-debounce": "^10.0.6"
   },
   "devDependencies": {
-    "@commitlint/cli": "^19.8.0",
-    "@commitlint/config-conventional": "^19.8.0",
-    "@iconify/json": "^2.2.333",
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "@iconify/json": "^2.2.385",
     "@iconify/types": "^2.0.0",
     "@release-it/conventional-changelog": "^10.0.1",
-    "@sanity/pkg-utils": "^7.2.2",
+    "@sanity/pkg-utils": "^8.1.12",
     "@sanity/plugin-kit": "^4.0.19",
-    "@tanstack/eslint-plugin-query": "^5.74.7",
-    "@tanstack/react-query-devtools": "^5.75.0",
-    "@types/react": "^19.1.2",
+    "@tanstack/eslint-plugin-query": "^5.89.0",
+    "@tanstack/react-query-devtools": "^5.89.0",
+    "@types/react": "^19.1.13",
     "@types/styled-components": "^5.1.34",
     "@waspeer/config": "^2.4.5",
-    "eslint": "^9.25.1",
-    "lefthook": "^1.11.12",
-    "npm-run-all2": "^7.0.2",
-    "prettier": "^3.5.3",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "react-is": "^19.1.0",
-    "release-it": "^19.0.1",
+    "eslint": "^9.35.0",
+    "lefthook": "^1.13.1",
+    "npm-run-all2": "^8.0.4",
+    "prettier": "^3.6.2",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-is": "^19.1.1",
+    "release-it": "^19.0.5",
     "rimraf": "^6.0.1",
-    "sanity": "^3.87.0",
-    "tsx": "^4.19.4",
-    "typescript": "^5.8.3",
-    "vite": "^6.3.4"
+    "sanity": "^4.9.0",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2",
+    "vite": "^7.1.6"
   },
   "peerDependencies": {
     "react": "^18 || ^19",
-    "sanity": "^3",
+    "sanity": "^3 || ^4",
     "styled-components": "^6"
   },
-  "packageManager": "pnpm@10.4.1+sha512.c753b6c3ad7afa13af388fa6d808035a008e30ea9993f58c6663e2bc5ff21679aa834db094987129aa4d488b86df57f7b634981b2f827cdcacc698cc0cfb88af",
+  "packageManager": "pnpm@10.17.0",
   "engines": {
-    "node": ">=18"
+    "node": ">=20.19"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
@@ -113,7 +113,8 @@
   "sanityPlugin": {
     "verifyPackage": {
       "scripts": false,
-      "eslintImports": false
+      "eslintImports": false,
+      "nodeEngine": false
     }
   }
 }
