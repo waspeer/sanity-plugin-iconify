@@ -1,5 +1,11 @@
 # Changelog
 
+# [2.1.0](https://github.com/waspeer/sanity-plugin-iconify/compare/v2.0.3...v2.1.0) (2025-09-18)
+
+### Features
+
+- add support for Sanity Studio v4 ([d91a8f8](https://github.com/waspeer/sanity-plugin-iconify/commit/d91a8f8fca25769211aaef2f6cc7f5595115d907)), closes [#8](https://github.com/waspeer/sanity-plugin-iconify/issues/8)
+
 ## [2.0.3](https://github.com/waspeer/sanity-plugin-iconify/compare/v2.0.2...v2.0.3) (2025-08-06)
 
 ### Bug Fixes
