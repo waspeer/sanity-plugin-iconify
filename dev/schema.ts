@@ -6,7 +6,7 @@ export const test = defineField({
   hidden: ({ value }) => value.name === 'test',
   validation: (Rule) =>
     Rule.custom((value) => {
-      const test = value?.name;
-      return test === 'yihaa' ? true : 'error';
+      const name = value?.name;
+      return name === 'lucide:home' ? true : 'error';
     }),
 });
