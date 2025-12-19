@@ -4,7 +4,6 @@ import type {
   ConditionalPropertyCallbackContext,
   FieldGroupDefinition,
   FieldsetDefinition,
-  PreviewConfig,
   RuleDef,
   ValidationBuilder,
 } from 'sanity';
@@ -13,7 +12,14 @@ import type {
 import type { IconPrefix } from './icon-types.gen';
 
 // Export types that need to be bundled with the plugin
-export type { BaseSchemaDefinition } from 'sanity';
+export type {
+  BaseSchemaDefinition,
+  ConditionalPropertyCallbackContext,
+  RuleDef,
+  FieldGroupDefinition,
+  FieldsetDefinition,
+} from 'sanity';
+
 export type { IconPrefix };
 
 export interface IconOptions {
@@ -56,7 +62,6 @@ export interface IconDefinition extends Omit<BaseSchemaDefinition, 'hidden' | 'r
   type: 'icon';
   groups?: FieldGroupDefinition[];
   fieldsets?: FieldsetDefinition[];
-  preview?: PreviewConfig;
   options?: IconOptions;
   hidden?: IconConditionalProperty;
   readOnly?: IconConditionalProperty;
