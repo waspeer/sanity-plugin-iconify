@@ -23,10 +23,10 @@ export type {
 
 export type { IconPrefix };
 
-export interface IconOptions {
+export type IconOptions = {
   collections?: IconPrefix[];
   showName?: boolean;
-}
+} & Pick<ObjectOptions, 'collapsed' | 'collapsible'>;
 
 export interface IconifyPluginConfig {
   collections?: IconPrefix[];
@@ -63,7 +63,7 @@ export interface IconDefinition extends Omit<BaseSchemaDefinition, 'hidden' | 'r
   type: 'icon';
   groups?: FieldGroupDefinition[];
   fieldsets?: FieldsetDefinition[];
-  options?: IconOptions & Pick<ObjectOptions, 'collapsed' | 'collapsible'>;
+  options?: IconOptions;
   hidden?: IconConditionalProperty;
   readOnly?: IconConditionalProperty;
   validation?: ValidationBuilder<IconRule, IconValue>;
