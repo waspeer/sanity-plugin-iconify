@@ -1,5 +1,13 @@
 import type { IconifyInfo } from '@iconify/types';
-import type { BaseSchemaDefinition } from 'sanity';
+import type {
+  BaseSchemaDefinition,
+  ConditionalPropertyCallbackContext,
+  FieldGroupDefinition,
+  FieldsetDefinition,
+  PreviewConfig,
+  RuleDef,
+  ValidationBuilder,
+} from 'sanity';
 
 // If this line errors, the type definitions have not been generated.
 import type { IconPrefix } from './icon-types.gen';
@@ -23,11 +31,37 @@ export interface IconifySearchResult {
   collections: Record<string, IconifyInfo>;
 }
 
+export interface IconValue {
+  name?: string;
+}
+
 // Extend the Sanity schema types to include our custom type
 declare module 'sanity' {
-  interface IconDefinition extends BaseSchemaDefinition {
+  //eslint-disable-next-line
+  export interface IconRule extends RuleDef<IconRule, IconValue> {}
+
+  export type IconConditionalPropertyCallbackContext = Omit<
+    ConditionalPropertyCallbackContext,
+    'value'
+  > & {
+    value: IconValue;
+  };
+
+  export type IconConditionalPropertyCallback = (
+    context: IconConditionalPropertyCallbackContext,
+  ) => boolean;
+
+  export type IconConditionalProperty = boolean | IconConditionalPropertyCallback | undefined;
+
+  interface IconDefinition extends Omit<BaseSchemaDefinition, 'hidden' | 'readOnly'> {
     type: 'icon';
+    groups?: FieldGroupDefinition[];
+    fieldsets?: FieldsetDefinition[];
+    preview?: PreviewConfig;
     options?: IconOptions;
+    hidden?: IconConditionalProperty;
+    readOnly?: IconConditionalProperty;
+    validation?: ValidationBuilder<IconRule, IconValue>;
   }
 
   export interface IntrinsicDefinitions {
