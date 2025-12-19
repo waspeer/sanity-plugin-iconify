@@ -75,7 +75,7 @@ describe('IconDefinition - Type Safety', () => {
       validation: (Rule) =>
         Rule.custom((value) => {
           expectTypeOf(value).toExtend<IconValue | undefined>();
-          return value?.name === 'yihaa' ? true : 'error';
+          return value?.name === 'lucide:home' ? true : 'error';
         }),
     });
   });

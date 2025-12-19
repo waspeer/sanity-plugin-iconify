@@ -31,39 +31,39 @@ export interface IconifySearchResult {
   collections: Record<string, IconifyInfo>;
 }
 
+// Extend the Sanity schema types to include our custom type
 export interface IconValue {
   name?: string;
 }
 
-// Extend the Sanity schema types to include our custom type
+//eslint-disable-next-line
+export interface IconRule extends RuleDef<IconRule, IconValue> {}
+
+export type IconConditionalPropertyCallbackContext = Omit<
+  ConditionalPropertyCallbackContext,
+  'value'
+> & {
+  value: IconValue;
+};
+
+export type IconConditionalPropertyCallback = (
+  context: IconConditionalPropertyCallbackContext,
+) => boolean;
+
+export type IconConditionalProperty = boolean | IconConditionalPropertyCallback | undefined;
+
+export interface IconDefinition extends Omit<BaseSchemaDefinition, 'hidden' | 'readOnly'> {
+  type: 'icon';
+  groups?: FieldGroupDefinition[];
+  fieldsets?: FieldsetDefinition[];
+  preview?: PreviewConfig;
+  options?: IconOptions;
+  hidden?: IconConditionalProperty;
+  readOnly?: IconConditionalProperty;
+  validation?: ValidationBuilder<IconRule, IconValue>;
+}
+
 declare module 'sanity' {
-  //eslint-disable-next-line
-  export interface IconRule extends RuleDef<IconRule, IconValue> {}
-
-  export type IconConditionalPropertyCallbackContext = Omit<
-    ConditionalPropertyCallbackContext,
-    'value'
-  > & {
-    value: IconValue;
-  };
-
-  export type IconConditionalPropertyCallback = (
-    context: IconConditionalPropertyCallbackContext,
-  ) => boolean;
-
-  export type IconConditionalProperty = boolean | IconConditionalPropertyCallback | undefined;
-
-  interface IconDefinition extends Omit<BaseSchemaDefinition, 'hidden' | 'readOnly'> {
-    type: 'icon';
-    groups?: FieldGroupDefinition[];
-    fieldsets?: FieldsetDefinition[];
-    preview?: PreviewConfig;
-    options?: IconOptions;
-    hidden?: IconConditionalProperty;
-    readOnly?: IconConditionalProperty;
-    validation?: ValidationBuilder<IconRule, IconValue>;
-  }
-
   export interface IntrinsicDefinitions {
     icon: IconDefinition;
   }
