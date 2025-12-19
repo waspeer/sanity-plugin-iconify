@@ -9,8 +9,8 @@ describe('IconDefinition - Type Safety', () => {
       type: 'icon',
       validation: (Rule) =>
         Rule.custom((value) => {
-          // value should be typed as IconValue | undefined
-          expectTypeOf(value).toExtend<IconValue | undefined>();
+          // value should be typed as IconValue
+          expectTypeOf(value).toExtend<IconValue>();
           expectTypeOf(value?.name).toExtend<string | undefined>();
 
           // Should support real-world validation logic
@@ -32,7 +32,7 @@ describe('IconDefinition - Type Safety', () => {
       name: 'icon',
       type: 'icon',
       hidden: ({ value, document }) => {
-        // value should be typed as IconValue (not undefined)
+        // value should be typed as IconValue
         expectTypeOf(value).toExtend<IconValue>();
         expectTypeOf(value?.name).toExtend<string | undefined>();
 
@@ -47,7 +47,7 @@ describe('IconDefinition - Type Safety', () => {
       name: 'icon',
       type: 'icon',
       readOnly: ({ value, document }) => {
-        // value should be typed as IconValue (not undefined)
+        // value should be typed as IconValue
         expectTypeOf(value).toExtend<IconValue>();
         expectTypeOf(value?.name).toExtend<string | undefined>();
 
@@ -74,7 +74,7 @@ describe('IconDefinition - Type Safety', () => {
       },
       validation: (Rule) =>
         Rule.custom((value) => {
-          expectTypeOf(value).toExtend<IconValue | undefined>();
+          expectTypeOf(value).toExtend<IconValue>();
           return value?.name === 'lucide:home' ? true : 'error';
         }),
     });
