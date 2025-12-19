@@ -39,9 +39,11 @@ export interface IconifySearchResult {
 }
 
 // Extend the Sanity schema types to include our custom type
-export interface IconValue {
-  name?: string;
-}
+export type IconValue =
+  | {
+      name?: string;
+    }
+  | undefined;
 
 //eslint-disable-next-line
 export interface IconRule extends RuleDef<IconRule, IconValue> {}

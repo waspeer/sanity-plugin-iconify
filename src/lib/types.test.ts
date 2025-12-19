@@ -34,10 +34,10 @@ describe('IconDefinition - Type Safety', () => {
       hidden: ({ value, document }) => {
         // value should be typed as IconValue (not undefined)
         expectTypeOf(value).toExtend<IconValue>();
-        expectTypeOf(value.name).toExtend<string | undefined>();
+        expectTypeOf(value?.name).toExtend<string | undefined>();
 
         // Should support real-world conditional logic
-        return value.name === 'hidden-icon' || document?._type === 'simple';
+        return value?.name === 'hidden-icon' || document?._type === 'simple';
       },
     });
   });
@@ -49,11 +49,11 @@ describe('IconDefinition - Type Safety', () => {
       readOnly: ({ value, document }) => {
         // value should be typed as IconValue (not undefined)
         expectTypeOf(value).toExtend<IconValue>();
-        expectTypeOf(value.name).toExtend<string | undefined>();
+        expectTypeOf(value?.name).toExtend<string | undefined>();
 
         // Should support real-world conditional logic
         const isPublished = document?.published === true;
-        const isSystemIcon = value.name?.startsWith('system:') ?? false;
+        const isSystemIcon = value?.name?.startsWith('system:') ?? false;
 
         return isPublished && isSystemIcon;
       },
@@ -66,11 +66,11 @@ describe('IconDefinition - Type Safety', () => {
       type: 'icon',
       hidden: ({ value }) => {
         expectTypeOf(value).toExtend<IconValue>();
-        return value.name === 'test';
+        return value?.name === 'test';
       },
       readOnly: ({ value }) => {
         expectTypeOf(value).toExtend<IconValue>();
-        return value.name === 'locked';
+        return value?.name === 'locked';
       },
       validation: (Rule) =>
         Rule.custom((value) => {
