@@ -4,6 +4,7 @@ import type {
   ConditionalPropertyCallbackContext,
   FieldGroupDefinition,
   FieldsetDefinition,
+  ObjectOptions,
   RuleDef,
   ValidationBuilder,
 } from 'sanity';
@@ -62,7 +63,7 @@ export interface IconDefinition extends Omit<BaseSchemaDefinition, 'hidden' | 'r
   type: 'icon';
   groups?: FieldGroupDefinition[];
   fieldsets?: FieldsetDefinition[];
-  options?: IconOptions;
+  options?: IconOptions & Pick<ObjectOptions, 'collapsed' | 'collapsible'>;
   hidden?: IconConditionalProperty;
   readOnly?: IconConditionalProperty;
   validation?: ValidationBuilder<IconRule, IconValue>;
