@@ -4,6 +4,7 @@ import type {
   ConditionalPropertyCallbackContext,
   FieldGroupDefinition,
   FieldsetDefinition,
+  InitialValueProperty,
   ObjectOptions,
   RuleDef,
   ValidationBuilder,
@@ -19,6 +20,7 @@ export type {
   RuleDef,
   FieldGroupDefinition,
   FieldsetDefinition,
+  InitialValueProperty,
 } from 'sanity';
 
 export type { IconPrefix };
@@ -69,6 +71,7 @@ export interface IconDefinition extends Omit<BaseSchemaDefinition, 'hidden' | 'r
   hidden?: IconConditionalProperty;
   readOnly?: IconConditionalProperty;
   validation?: ValidationBuilder<IconRule, IconValue>;
+  initialValue?: InitialValueProperty<any, IconValue>;
 }
 
 declare module 'sanity' {
