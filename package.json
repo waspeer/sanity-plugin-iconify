@@ -1,6 +1,6 @@
 {
   "name": "sanity-plugin-iconify",
-  "version": "2.1.0",
+  "version": "3.0.0-beta.1",
   "description": "Icon picker based on Iconify",
   "keywords": [
     "sanity",
