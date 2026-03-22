@@ -2,8 +2,8 @@ import { defineConfig, defineField, defineType } from 'sanity';
 import { structureTool } from 'sanity/structure';
 import { iconify } from '../src';
 
-const testDocument = defineType({
-  name: 'testDocument',
+const iconifyPluginTest = defineType({
+  name: 'iconifyPluginTest',
   title: 'Test Document',
   type: 'document',
   fields: [
@@ -31,6 +31,6 @@ export default defineConfig({
   title: 'Plugin Dev Studio',
   plugins: [structureTool(), iconify()],
   schema: {
-    types: [testDocument],
+    types: [iconifyPluginTest],
   },
 });

@@ -20,7 +20,7 @@ async function selectFirstIcon(page: Page) {
 test.describe('icon field', () => {
   test.beforeEach(async ({ page }) => {
     // Use the intent URL to always get a fresh document (avoids reusing an existing draft)
-    await page.goto('/intent/create/template=testDocument;type=testDocument/');
+    await page.goto('/intent/create/template=iconifyPluginTest;type=iconifyPluginTest/');
     await expect(page.getByTestId('document-panel-scroller')).toBeVisible({ timeout: 15_000 });
   });
 
