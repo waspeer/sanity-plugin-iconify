@@ -14,7 +14,14 @@ export function UnsetButton(props: UnsetButtonProps) {
 
   return (
     <Card border borderLeft={false} padding={1} display="flex" radius={2}>
-      <Button icon={<TrashIcon />} onClick={onUnset} mode="bleed" fontSize={1} padding={2} />
+      <Button
+        data-testid="iconify-unset"
+        icon={<TrashIcon />}
+        onClick={onUnset}
+        mode="bleed"
+        fontSize={1}
+        padding={2}
+      />
     </Card>
   );
 }

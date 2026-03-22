@@ -63,3 +63,12 @@ dist
 
 # TypeScript incremental compilation cache
 *.tsbuildinfo
+
+# Playwright
+playwright/.auth
+playwright-report
+test-results
+
+# Local env files
+dev/.env
+dev/.env.local
