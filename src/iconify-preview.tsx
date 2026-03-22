@@ -1,6 +1,7 @@
 import { Icon } from '@iconify/react';
 import type { IconifyIconName } from '@iconify/utils';
 import { stringToIcon } from '@iconify/utils';
+import { memo } from 'react';
 import type { PreviewProps } from 'sanity';
 import { QueryClientProvider } from './lib/query-client';
 import { usePrettyIconName } from './lib/use-pretty-icon-name';
@@ -9,7 +10,7 @@ import { usePrettyIconName } from './lib/use-pretty-icon-name';
 // ICONIFY PREVIEW //
 // --------------- //
 
-export function IconifyPreview(props: PreviewProps) {
+export const IconifyPreview = memo(function IconifyPreview(props: PreviewProps) {
   const { title } = props;
   const iconName = typeof props.title === 'string' ? stringToIcon(props.title) : null;
 
@@ -23,7 +24,7 @@ export function IconifyPreview(props: PreviewProps) {
   }
 
   return props.renderDefault(props);
-}
+});
 
 // --------------------- //
 // ICONIFY PREVIEW INNER //
