@@ -72,3 +72,6 @@ test-results
 # Local env files
 dev/.env
 dev/.env.local
+
+# Claude Code
+skills-lock.json
