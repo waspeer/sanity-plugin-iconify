@@ -1,6 +1,6 @@
 import { Flex, Stack, Text, ThemeProvider } from '@sanity/ui';
 import { buildTheme } from '@sanity/ui/theme';
-import { useCallback } from 'react';
+import { memo, useCallback } from 'react';
 import type { ObjectInputProps } from 'sanity';
 import { set, unset } from 'sanity';
 import { IconifyCombobox } from './combobox';
@@ -8,12 +8,14 @@ import { QueryClientProvider } from './lib/query-client';
 import type { IconifyPluginConfig, IconOptions } from './lib/types';
 import { usePrettyIconName } from './lib/use-pretty-icon-name';
 
+const theme = buildTheme();
+
 interface IconifyInputProps extends ObjectInputProps {
   config: IconifyPluginConfig;
 }
 
-export function IconifyInput(props: IconifyInputProps) {
-  const { config, value, onChange: pushChange, schemaType } = props;
+export const IconifyInput = memo(function IconifyInput(props: IconifyInputProps) {
+  const { config, value, onChange: pushChange, schemaType, elementProps, focused } = props;
 
   const selectedIcon: string | null = value?.name ?? null;
 
@@ -33,12 +35,14 @@ export function IconifyInput(props: IconifyInputProps) {
 
   return (
     <QueryClientProvider>
-      <ThemeProvider theme={buildTheme()}>
+      <ThemeProvider theme={theme}>
         <Stack space={2}>
           <IconifyCombobox
             selectedIcon={selectedIcon}
             onSelect={handleSelect}
             collections={collections}
+            studioElementProps={elementProps}
+            fieldFocused={focused}
           />
 
           {showName && selectedIcon ? <IconifyNameDisplay name={selectedIcon} /> : null}
@@ -46,7 +50,7 @@ export function IconifyInput(props: IconifyInputProps) {
       </ThemeProvider>
     </QueryClientProvider>
   );
-}
+});
 
 interface IconifyNameDisplayProps {
   name?: string | null;
