@@ -1,5 +1,17 @@
 # Changelog
 
+# [3.0.0-beta.2](https://github.com/waspeer/sanity-plugin-iconify/compare/v3.0.0-beta.1...v3.0.0-beta.2) (2026-03-23)
+
+### Bug Fixes
+
+- expose SANITY*STUDIO* env vars to vite dev server ([284cd5a](https://github.com/waspeer/sanity-plugin-iconify/commit/284cd5a000da2f76793c9591acb5dc14146ebd15))
+- integrate studio focus state into icon picker to prevent menu flicker on field activation ([37bb7b1](https://github.com/waspeer/sanity-plugin-iconify/commit/37bb7b1c599aae50abb4fb0c6c93ef7d890db6ec))
+- memoize icon picker components to prevent unnecessary re-renders ([847dbbb](https://github.com/waspeer/sanity-plugin-iconify/commit/847dbbb35d812e71df470d64f0061439257105a4))
+
+### Features
+
+- add typed validation and conditional property callbacks to icon field definition ([40cc604](https://github.com/waspeer/sanity-plugin-iconify/commit/40cc6040701fabb07b1d2425b870d426e960656e))
+
 # [2.1.0](https://github.com/waspeer/sanity-plugin-iconify/compare/v2.0.3...v2.1.0) (2025-09-18)
 
 ### Features
