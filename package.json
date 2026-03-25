@@ -85,8 +85,8 @@
     "@types/styled-components": "^5.1.36",
     "@vitejs/plugin-react": "^6.0.1",
     "@vitest/ui": "^4.1.0",
-    "@waspeer/config": "^2.4.5",
-    "eslint": "9.39.2",
+    "@waspeer/config": "^3.0.0",
+    "eslint": "^10.1.0",
     "lefthook": "^2.0.12",
     "npm-run-all2": "^8.0.4",
     "prettier": "^3.7.4",
@@ -119,7 +119,6 @@
     ],
     "overrides": {
       "esbuild@<=0.24.2": ">=0.25.0",
-      "eslint": "^9",
       "micromatch@<4.0.8": ">=4.0.8",
       "prismjs@<1.30.0": ">=1.30.0"
     }
