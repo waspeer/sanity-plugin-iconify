@@ -1,5 +1,11 @@
 # Changelog
 
+# [3.0.0](https://github.com/waspeer/sanity-plugin-iconify/compare/v3.0.0-beta.2...v3.0.0) (2026-03-25)
+
+### Bug Fixes
+
+- remove unused ts-expect-error directive ([11ffb0e](https://github.com/waspeer/sanity-plugin-iconify/commit/11ffb0e805434cc90204ebbc15f62c33cad7f2ba))
+
 # [3.0.0-beta.2](https://github.com/waspeer/sanity-plugin-iconify/compare/v3.0.0-beta.1...v3.0.0-beta.2) (2026-03-23)
 
 ### Bug Fixes
