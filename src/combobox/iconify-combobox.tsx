@@ -142,7 +142,6 @@ export const IconifyCombobox = memo(function IconifyCombobox(props: IconifyCombo
 
   return (
     <div>
-      {/* @ts-expect-error wrong typings */}
       <SearchInput
         {...inputProps}
         onBlur={handleBlur}
