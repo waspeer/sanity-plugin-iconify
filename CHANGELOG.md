@@ -2,9 +2,19 @@
 
 # [3.0.0](https://github.com/waspeer/sanity-plugin-iconify/compare/v3.0.0-beta.2...v3.0.0) (2026-03-25)
 
+### ⚠ Breaking Changes
+
+- Requires Sanity Studio v5 and React 19.2. For v3/v4 support, continue using [v2.x](https://github.com/waspeer/sanity-plugin-iconify/tree/v2).
+
 ### Bug Fixes
 
-- remove unused ts-expect-error directive ([11ffb0e](https://github.com/waspeer/sanity-plugin-iconify/commit/11ffb0e805434cc90204ebbc15f62c33cad7f2ba))
+- Memoize icon picker components to prevent unnecessary re-renders in sibling fields ([#6](https://github.com/waspeer/sanity-plugin-iconify/issues/6))
+- Integrate Studio focus state into icon picker to prevent menu flicker on field activation
+- Remove unused `@ts-expect-error` directive
+
+### Features
+
+- Add typed `validation`, `hidden`, `readOnly`, and `initialValue` callbacks to the icon field definition
 
 # [3.0.0-beta.2](https://github.com/waspeer/sanity-plugin-iconify/compare/v3.0.0-beta.1...v3.0.0-beta.2) (2026-03-23)
 
