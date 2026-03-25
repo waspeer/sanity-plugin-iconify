@@ -1,12 +1,11 @@
 {
   "compilerOptions": {
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "target": "esnext",
     "module": "esnext",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "esModuleInterop": true,
     "strict": true,
-    "downlevelIteration": true,
     "declaration": true,
     "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
