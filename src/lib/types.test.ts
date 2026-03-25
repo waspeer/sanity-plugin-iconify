@@ -1,11 +1,18 @@
 import { defineField } from 'sanity';
+import type { IntrinsicDefinitions } from 'sanity';
 import { describe, expectTypeOf, it } from 'vitest';
-import type { IconValue } from './types';
+import type { IconDefinition, IconValue } from './types';
 
 // These are type-level tests: they fail at compile time if types are wrong,
 // not at runtime. Credit: danilo-arioli (PR #13).
 
 describe('IconDefinition type safety', () => {
+  it('registers icon in IntrinsicDefinitions (module augmentation)', () => {
+    // If this fails, the declare module 'sanity' augmentation is broken and
+    // Sanity won't recognise 'icon' as a valid type string in defineField/defineType.
+    expectTypeOf<IntrinsicDefinitions['icon']>().toMatchTypeOf<IconDefinition>();
+  });
+
   it('types value as IconValue in validation callbacks', () => {
     defineField({
       name: 'icon',
@@ -43,6 +50,17 @@ describe('IconDefinition type safety', () => {
     });
   });
 
+  it('types value as IconValue in initialValue callbacks', () => {
+    defineField({
+      name: 'icon',
+      type: 'icon',
+      initialValue: (params, context) => {
+        expectTypeOf(context.currentUser).toMatchTypeOf<{ id: string } | null>();
+        return { name: 'mdi:home' } satisfies IconValue;
+      },
+    });
+  });
+
   it('accepts collapsible and collapsed options', () => {
     defineField({
       name: 'icon',
@@ -51,7 +69,17 @@ describe('IconDefinition type safety', () => {
         collapsible: true,
         collapsed: false,
         collections: ['mdi'],
+        showName: true,
       },
+    });
+  });
+
+  it('rejects unknown options', () => {
+    defineField({
+      name: 'icon',
+      type: 'icon',
+      // @ts-expect-error unknown option should not be accepted
+      options: { unknownOption: true },
     });
   });
 });

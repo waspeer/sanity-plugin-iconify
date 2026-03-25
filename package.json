@@ -84,7 +84,7 @@
     "@vitejs/plugin-react": "^5.1.2",
     "@vitest/ui": "^4.1.0",
     "@waspeer/config": "^2.4.5",
-    "eslint": "^9.39.2",
+    "eslint": "9.39.2",
     "lefthook": "^2.0.12",
     "npm-run-all2": "^8.0.4",
     "prettier": "^3.7.4",
