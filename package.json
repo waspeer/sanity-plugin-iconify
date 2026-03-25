@@ -21,15 +21,20 @@
   "exports": {
     ".": {
       "source": "./src/index.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs",
-      "default": "./dist/index.js"
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
     },
     "./package.json": "./package.json"
   },
   "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
   "files": [
     "dist",
     "sanity.json",
@@ -37,10 +42,8 @@
     "v2-incompatible.js"
   ],
   "scripts": {
-    "build": "run-s build:clean build:verify build:bundle build:check",
-    "build:bundle": "pkg-utils build --strict",
-    "build:check": "pkg-utils --strict",
-    "build:clean": "rimraf dist",
+    "build": "run-s build:verify build:bundle",
+    "build:bundle": "tsdown",
     "build:verify": "plugin-kit verify-package --silent",
     "dev": "vite dev --config dev/vite.config.ts",
     "format": "prettier --write --cache --ignore-unknown .",
@@ -53,7 +56,7 @@
     "test:e2e:ui": "playwright test --ui",
     "test:ui": "vitest --ui",
     "test:watch": "vitest",
-    "watch": "pkg-utils watch --strict"
+    "watch": "tsdown --watch"
   },
   "browserslist": "extends @sanity/browserslist-config",
   "dependencies": {
@@ -75,7 +78,6 @@
     "@iconify/types": "^2.0.0",
     "@playwright/test": "^1.58.2",
     "@release-it/conventional-changelog": "^10.0.4",
-    "@sanity/pkg-utils": "^10.2.3",
     "@sanity/plugin-kit": "^4.0.20",
     "@tanstack/eslint-plugin-query": "^5.89.0",
     "@tanstack/react-query-devtools": "^5.89.0",
@@ -88,12 +90,14 @@
     "lefthook": "^2.0.12",
     "npm-run-all2": "^8.0.4",
     "prettier": "^3.7.4",
+    "publint": "^0.3.18",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
     "react-is": "^19.2.3",
     "release-it": "^19.1.0",
     "rimraf": "^6.1.2",
     "sanity": "^5.0.1",
+    "tsdown": "^0.21.5",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3",
     "vite": "^7.3.0",
@@ -124,7 +128,9 @@
     "verifyPackage": {
       "scripts": false,
       "eslintImports": false,
-      "nodeEngine": false
+      "nodeEngine": false,
+      "pkg-utils": false,
+      "rollupConfig": false
     }
   }
 }
