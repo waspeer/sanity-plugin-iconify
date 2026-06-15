@@ -41,7 +41,7 @@ Enhance your [Sanity](https://www.sanity.io/) project with the Iconify plugin, w
 
 ## 🚀 Getting Started
 
-> **Requires Sanity Studio v5.** For Sanity Studio v3/v4, use [v2.x](https://github.com/waspeer/sanity-plugin-iconify/tree/v2).
+> **Requires Sanity Studio v5 or v6.** For Sanity Studio v3/v4, use [v2.x](https://github.com/waspeer/sanity-plugin-iconify/tree/v2).
 
 ### Installation
 
