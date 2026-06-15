@@ -115,7 +115,8 @@
   "pnpm": {
     "onlyBuiltDependencies": [
       "esbuild",
-      "lefthook"
+      "lefthook",
+      "unrs-resolver"
     ],
     "overrides": {
       "@babel/core@<7.29.6": ">=7.29.6",
