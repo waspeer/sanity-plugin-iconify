@@ -1,5 +1,25 @@
 # Changelog
 
+# [4.0.0](https://github.com/waspeer/sanity-plugin-iconify/compare/v3.0.0...v4.0.0) (2026-06-15)
+
+### ⚠ Breaking Changes
+
+- **Requires Node.js >= 22.12.** The build toolchain (Sanity 6 CLI, tsdown, commitlint, release-it) now requires Node 22+, and the package `engines` field enforces it. The plugin's runtime code does not itself require Node 22 — consumers who must stay on Node 20 should remain on [v3.x](https://github.com/waspeer/sanity-plugin-iconify/tree/v3).
+
+### Features
+
+- Add support for **Sanity Studio v6**. The `sanity` peer dependency range is widened to `^5.0.0-0 || ^6.0.0-0`, so the plugin now works on both Studio v5 and v6.
+
+### Bug Fixes
+
+- Fix a type error in the combobox search input (downshift `getInputProps` vs Sanity UI `TextInput` `onChange` handler variance).
+- Repair CI: regenerate the lockfile (a stale `eslint` override broke `--frozen-lockfile`) and resolve an ESLint 10 incompatibility (`@typescript-eslint/utils` `FlatESLint` crash).
+
+### Build / Dependencies
+
+- Upgrade **all** dependencies to their latest versions — runtime (`@iconify/*`, `@sanity/ui`, `@tanstack/react-query`, `downshift`, `use-debounce`, `change-case`, `ts-pattern`) and tooling (sanity 6, vite 8, typescript 6, eslint 10, release-it 20, tsdown 0.22, vitest 4).
+- Resolve dependency security advisories (**74 → 5**). The 5 remaining are deep build-tooling transitives (js-yaml, ajv, uuid, esbuild) awaiting upstream fixes; **none reach the published runtime bundle**. Confirmed: no XSS (DOMPurify et al., all dev-tooling only) is present in the plugin's published output.
+
 # [3.0.0](https://github.com/waspeer/sanity-plugin-iconify/compare/v3.0.0-beta.2...v3.0.0) (2026-03-25)
 
 ### ⚠ Breaking Changes
