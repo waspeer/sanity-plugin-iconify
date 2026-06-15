@@ -2,6 +2,12 @@
 
 # [4.0.0](https://github.com/waspeer/sanity-plugin-iconify/compare/v3.0.0...v4.0.0) (2026-06-15)
 
+### Bug Fixes
+
+- regenerate lockfile and resolve pre-existing combobox type error ([e2352aa](https://github.com/waspeer/sanity-plugin-iconify/commit/e2352aaa6b7c5dfc094a57ed1651dd04ebd68178))
+
+# [4.0.0](https://github.com/waspeer/sanity-plugin-iconify/compare/v3.0.0...v4.0.0) (2026-06-15)
+
 ### ⚠ Breaking Changes
 
 - **Requires Node.js >= 22.12.** The build toolchain (Sanity 6 CLI, tsdown, commitlint, release-it) now requires Node 22+, and the package `engines` field enforces it. The plugin's runtime code does not itself require Node 22 — consumers who must stay on Node 20 should remain on [v3.x](https://github.com/waspeer/sanity-plugin-iconify/tree/v3).
