@@ -1,5 +1,11 @@
 # Changelog
 
+## [4.0.1](https://github.com/waspeer/sanity-plugin-iconify/compare/v4.0.0...v4.0.1) (2026-06-24)
+
+### Bug Fixes
+
+- transpile JSX in published dist ([e46aa47](https://github.com/waspeer/sanity-plugin-iconify/commit/e46aa47cd4623486e92bfdf3c047aa703b552a2d)), closes [#15](https://github.com/waspeer/sanity-plugin-iconify/issues/15)
+
 # [4.0.0](https://github.com/waspeer/sanity-plugin-iconify/compare/v3.0.0...v4.0.0) (2026-06-15)
 
 ### Bug Fixes
