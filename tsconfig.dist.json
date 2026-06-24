@@ -9,7 +9,10 @@
   ],
   "compilerOptions": {
     "emitDeclarationOnly": true,
-    "jsx": "preserve",
+    // tsdown uses this tsconfig for the JS transform too, so JSX must be
+    // compiled (react-jsx), not "preserve" — preserve ships raw JSX in dist
+    // and breaks consumers' bundlers (esbuild/Vite). See issue #15.
+    "jsx": "react-jsx",
     "module": "Preserve",
     "noEmit": true,
     "outDir": "./dist",
