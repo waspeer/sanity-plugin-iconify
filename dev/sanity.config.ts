@@ -1,6 +1,6 @@
 import { defineConfig, defineField, defineType } from 'sanity';
 import { structureTool } from 'sanity/structure';
-import { iconify } from '../src';
+import { iconify } from 'sanity-plugin-iconify';
 
 const iconifyPluginTest = defineType({
   name: 'iconifyPluginTest',

@@ -10,6 +10,12 @@ const config = [
     {
       ignores: ['v2-incompatible.js', '*.cjs', 'dist', 'package.config.ts', '*.gen.ts'],
     },
+    {
+      files: ['scripts/**'],
+      languageOptions: {
+        globals: { URL: 'readonly', console: 'readonly', process: 'readonly' },
+      },
+    },
   ],
 ].flat();
 
