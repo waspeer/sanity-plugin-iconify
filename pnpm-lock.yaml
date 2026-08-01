@@ -5,24 +5,24 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  esbuild@<0.28.1: '>=0.28.1'
-  micromatch@<4.0.8: '>=4.0.8'
-  prismjs@<1.30.0: '>=1.30.0'
+  '@babel/core@<7.29.6': '>=7.29.6'
+  '@isaacs/brace-expansion@<5.0.1': '>=5.0.1'
   '@typescript-eslint/utils': ^8.61.1
+  brace-expansion@>=4.0.0 <5.0.6: '>=5.0.6'
+  brace-expansion@<2.0.3: '>=2.0.3'
+  esbuild@<0.28.1: '>=0.28.1'
+  follow-redirects@<1.16.0: '>=1.16.0'
+  lodash@<4.17.23: '>=4.17.23'
+  micromatch@<4.0.8: '>=4.0.8'
   minimatch@<10.2.3: '>=10.2.3'
   picomatch@<4.0.4: '>=4.0.4'
-  serialize-javascript@<7.0.5: '>=7.0.5'
-  lodash@<4.17.23: '>=4.17.23'
-  shell-quote@<1.8.4: '>=1.8.4'
+  postcss@<8.5.18: '>=8.5.18'
+  prismjs@<1.30.0: '>=1.30.0'
   rollup@<4.59.0: '>=4.59.0'
-  brace-expansion@<2.0.3: '>=2.0.3'
-  brace-expansion@>=4.0.0 <5.0.6: '>=5.0.6'
-  '@isaacs/brace-expansion@<5.0.1': '>=5.0.1'
-  postcss@<8.5.10: '>=8.5.10'
-  follow-redirects@<1.16.0: '>=1.16.0'
+  serialize-javascript@<7.0.5: '>=7.0.5'
+  shell-quote@<1.8.4: '>=1.8.4'
   tmp@<0.2.6: '>=0.2.6'
   uuid@>=11.0.0 <11.1.1: '>=11.1.1'
-  '@babel/core@<7.29.6': '>=7.29.6'
 
 importers:
 
@@ -103,7 +103,7 @@ importers:
         version: 4.1.9(vitest@4.1.9)
       '@waspeer/config':
         specifier: ^3.0.0
-        version: 3.0.0(@typescript-eslint/utils@8.61.1(eslint@10.5.0(jiti@2.7.0))(typescript@6.0.3))(eslint@10.5.0(jiti@2.7.0))(postcss@8.5.15)(prettier@3.8.4)(typescript@6.0.3)
+        version: 3.0.0(@typescript-eslint/utils@8.61.1(eslint@10.5.0(jiti@2.7.0))(typescript@6.0.3))(eslint@10.5.0(jiti@2.7.0))(postcss@8.5.25)(prettier@3.8.4)(typescript@6.0.3)
       eslint:
         specifier: ^10.1.0
         version: 10.5.0(jiti@2.7.0)
@@ -4278,7 +4278,7 @@ packages:
     resolution: {integrity: sha512-LQF6N/3vkAMYF4xoHLJfG718HRJh34Z8BnNhd6bosOMIVjMlhuZK5++oZa3uYAgrI5+7x2o27gUqTR2U/KjUOQ==}
     engines: {node: ^14 || ^16 || >=18}
     peerDependencies:
-      postcss: '>=8.5.10'
+      postcss: '>=8.5.18'
 
   css-select@5.2.2:
     resolution: {integrity: sha512-TizTzUddG/xYLA3NXodFM0fSbNizXjOKhqiQQwvhlspadZokn1KDy0NZFS0wuEubIYAV5/c1/lAr0TaaFXEXzw==}
@@ -6325,6 +6325,11 @@ packages:
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
 
+  nanoid@3.3.16:
+    resolution: {integrity: sha512-bzlKTyNJ7+LdGIIwy8ijFpIqEQIvafahV7eYykJ8Cvh42EdJeODoJ6gUJXpQJvej1BddH8OqTXZNE/KfbWAu8Q==}
+    engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
+    hasBin: true
+
   nanoid@5.1.11:
     resolution: {integrity: sha512-v+KEsUv2ps74PaSKv0gHTxTCgMXOIfBEbaqa6w6ISIGC7ZsvHN4N9oJ8d4cmf0n5oTzQz2SLmThbQWhjd/8eKg==}
     engines: {node: ^18 || >=20}
@@ -6743,13 +6748,13 @@ packages:
     resolution: {integrity: sha512-FPX16mQLyEjLzEuuJtxA8X3ejDLNGGEG503d2YGZR5Ask1SpDN8KmZUMpzCvyalWRywAn1n1VOA5dcqfCLo5rg==}
     engines: {node: '>=12'}
     peerDependencies:
-      postcss: '>=8.5.10'
+      postcss: '>=8.5.18'
 
   postcss-scss@4.0.9:
     resolution: {integrity: sha512-AjKOeiwAitL/MXxQW2DliT28EKukvvbEWx3LBmJIRN8KfBGZbRTxNYW0kSqi1COiTZ57nZ9NW06S6ux//N1c9A==}
     engines: {node: '>=12.0'}
     peerDependencies:
-      postcss: '>=8.5.10'
+      postcss: '>=8.5.18'
 
   postcss-selector-parser@7.1.1:
     resolution: {integrity: sha512-orRsuYpJVw8LdAwqqLykBj9ecS5/cRHlI5+nvTo8LcCKmzDmqVORXtOIYEEQuL9D4BxtA1lm5isAqzQZCoQ6Eg==}
@@ -6758,8 +6763,8 @@ packages:
   postcss-value-parser@4.2.0:
     resolution: {integrity: sha512-1NNCs6uurfkVbeXG4S8JFT9t19m45ICnif8zWLd5oPSZ50QnwMfK+H3jv408d4jw/7Bttv5axS5IiHoLaVNHeQ==}
 
-  postcss@8.5.15:
-    resolution: {integrity: sha512-FfR8sjd4em2T6fb3I2MwAJU7HWVMr9zba+enmQeeWFfCbm+UOC/0X4DS8XtpUTMwWMGbjKYP7xjfNekzyGmB3A==}
+  postcss@8.5.25:
+    resolution: {integrity: sha512-DTPx3RWSSnWyzLxQnlH0rJP+EW5ekl16ZU4/psbIhA0e53kJfdgaN5vKM+xP7yJtXVu+nfdVFmlgFDEKAe4Pyw==}
     engines: {node: ^10 || ^12 || >=14}
 
   powershell-utils@0.1.0:
@@ -11565,7 +11570,7 @@ snapshots:
       outdent: 0.8.0
       p-any: 3.0.0
       p-props: 4.0.0
-      postcss: 8.5.15
+      postcss: 8.5.25
       semver: 7.5.4
       spdx-license-ids: 3.0.18
       validate-npm-package-name: 5.0.0
@@ -12255,7 +12260,7 @@ snapshots:
       convert-source-map: 2.0.0
       tinyrainbow: 3.1.0
 
-  '@waspeer/config@3.0.0(@typescript-eslint/utils@8.61.1(eslint@10.5.0(jiti@2.7.0))(typescript@6.0.3))(eslint@10.5.0(jiti@2.7.0))(postcss@8.5.15)(prettier@3.8.4)(typescript@6.0.3)':
+  '@waspeer/config@3.0.0(@typescript-eslint/utils@8.61.1(eslint@10.5.0(jiti@2.7.0))(typescript@6.0.3))(eslint@10.5.0(jiti@2.7.0))(postcss@8.5.25)(prettier@3.8.4)(typescript@6.0.3)':
     dependencies:
       '@eslint-react/eslint-plugin': 3.0.0(eslint@10.5.0(jiti@2.7.0))(typescript@6.0.3)
       '@eslint/js': 10.0.1(eslint@10.5.0(jiti@2.7.0))
@@ -12270,7 +12275,7 @@ snapshots:
       eslint-plugin-solid: 0.14.5(eslint@10.5.0(jiti@2.7.0))(typescript@6.0.3)
       prettier: 3.8.4
       prettier-plugin-astro: 0.14.1
-      prettier-plugin-css-order: 2.2.0(postcss@8.5.15)(prettier@3.8.4)
+      prettier-plugin-css-order: 2.2.0(postcss@8.5.25)(prettier@3.8.4)
       prettier-plugin-packagejson: 3.0.2(prettier@3.8.4)
       smob: 1.6.2
       typescript-eslint: 8.61.1(eslint@10.5.0(jiti@2.7.0))(typescript@6.0.3)
@@ -12981,9 +12986,9 @@ snapshots:
 
   css-color-keywords@1.0.0: {}
 
-  css-declaration-sorter@7.3.0(postcss@8.5.15):
+  css-declaration-sorter@7.3.0(postcss@8.5.25):
     dependencies:
-      postcss: 8.5.15
+      postcss: 8.5.25
 
   css-select@5.2.2:
     dependencies:
@@ -13442,7 +13447,7 @@ snapshots:
       eslint: 10.5.0(jiti@2.7.0)
       eslint-compat-utils: 0.6.5(eslint@10.5.0(jiti@2.7.0))
       globals: 16.5.0
-      postcss: 8.5.15
+      postcss: 8.5.25
       postcss-selector-parser: 7.1.1
     transitivePeerDependencies:
       - supports-color
@@ -15171,6 +15176,8 @@ snapshots:
 
   nanoid@3.3.12: {}
 
+  nanoid@3.3.16: {}
+
   nanoid@5.1.11: {}
 
   napi-postinstall@0.3.4: {}
@@ -15625,13 +15632,13 @@ snapshots:
 
   possible-typed-array-names@1.1.0: {}
 
-  postcss-less@6.0.0(postcss@8.5.15):
+  postcss-less@6.0.0(postcss@8.5.25):
     dependencies:
-      postcss: 8.5.15
+      postcss: 8.5.25
 
-  postcss-scss@4.0.9(postcss@8.5.15):
+  postcss-scss@4.0.9(postcss@8.5.25):
     dependencies:
-      postcss: 8.5.15
+      postcss: 8.5.25
 
   postcss-selector-parser@7.1.1:
     dependencies:
@@ -15640,9 +15647,9 @@ snapshots:
 
   postcss-value-parser@4.2.0: {}
 
-  postcss@8.5.15:
+  postcss@8.5.25:
     dependencies:
-      nanoid: 3.3.12
+      nanoid: 3.3.16
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
@@ -15658,11 +15665,11 @@ snapshots:
       prettier: 3.8.4
       sass-formatter: 0.7.9
 
-  prettier-plugin-css-order@2.2.0(postcss@8.5.15)(prettier@3.8.4):
+  prettier-plugin-css-order@2.2.0(postcss@8.5.25)(prettier@3.8.4):
     dependencies:
-      css-declaration-sorter: 7.3.0(postcss@8.5.15)
-      postcss-less: 6.0.0(postcss@8.5.15)
-      postcss-scss: 4.0.9(postcss@8.5.15)
+      css-declaration-sorter: 7.3.0(postcss@8.5.25)
+      postcss-less: 6.0.0(postcss@8.5.25)
+      postcss-scss: 4.0.9(postcss@8.5.25)
       prettier: 3.8.4
     transitivePeerDependencies:
       - postcss
@@ -16723,7 +16730,7 @@ snapshots:
       '@types/stylis': 4.2.5
       css-to-react-native: 3.2.0
       csstype: 3.1.3
-      postcss: 8.5.15
+      postcss: 8.5.25
       react: 19.2.7
       react-dom: 19.2.7(react@19.2.7)
       shallowequal: 1.1.0
@@ -17230,7 +17237,7 @@ snapshots:
     dependencies:
       lightningcss: 1.32.0
       picomatch: 4.0.4
-      postcss: 8.5.15
+      postcss: 8.5.25
       rolldown: 1.0.3
       tinyglobby: 0.2.17
     optionalDependencies:
