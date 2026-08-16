@@ -47,6 +47,11 @@ test.describe('icon field', () => {
   });
 
   test('menu opens and closes exactly once during a search interaction', async ({ page }) => {
+    // The Popover renders its content only once the input ref is attached, so the results list
+    // mounts (display:none) a render after the document panel appears. Wait for it before
+    // installing the observer — otherwise it captures null and silently records nothing.
+    await page.locator('[data-testid="iconify-results"]').waitFor({ state: 'attached' });
+
     // Track Popover display transitions via MutationObserver. A spurious close/reopen during
     // Studio's field activation (its focus-steal sequence) would produce ['open','close','open','close']
     // instead of the expected ['open','close'].

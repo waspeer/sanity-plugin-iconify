@@ -1,4 +1,4 @@
-import { TrashIcon } from '@sanity/icons';
+import { TrashIcon } from '@sanity/icons/Trash';
 import { Button, Card } from '@sanity/ui';
 
 // ------------ //

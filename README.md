@@ -41,7 +41,9 @@ Enhance your [Sanity](https://www.sanity.io/) project with the Iconify plugin, w
 
 ## 🚀 Getting Started
 
-> **Requires Sanity Studio v5 or v6.** For Sanity Studio v3/v4, use [v2.x](https://github.com/waspeer/sanity-plugin-iconify/tree/v2).
+> **Requires Sanity Studio v6.9.2 or later** — the first release to ship [`@sanity/ui`](https://github.com/sanity-io/ui) v4. The plugin declares `@sanity/ui` as a peer dependency so it shares the Studio's own copy; a Studio that ships `@sanity/ui` v3 would load a second, separate copy and break React context.
+>
+> For Sanity Studio v5, or v6.0–v6.9.1, install `sanity-plugin-iconify@4`. For Sanity Studio v3/v4, use [v2.x](https://github.com/waspeer/sanity-plugin-iconify/tree/v2).
 
 ### Installation
 

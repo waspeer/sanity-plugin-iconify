@@ -49,9 +49,7 @@ export type IconConditionalPropertyCallbackContext = Omit<
 };
 
 export type IconConditionalProperty =
-  | boolean
-  | ((context: IconConditionalPropertyCallbackContext) => boolean)
-  | undefined;
+  boolean | ((context: IconConditionalPropertyCallbackContext) => boolean) | undefined;
 
 export interface IconDefinition extends Omit<BaseSchemaDefinition, 'hidden' | 'readOnly'> {
   type: 'icon';

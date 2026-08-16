@@ -44,7 +44,6 @@ export function useSearch({ collections }: { collections: string[] | null }) {
     [setDebouncedTerm],
   );
 
-  // eslint-disable-next-line @tanstack/query/exhaustive-deps -- queryClient from useQueryClient() is a stable reference, not a query dependency
   const { isLoading, isError, error, data, isPlaceholderData } = useQuery<string[], Error>({
     queryKey: ['search', collections, debouncedTerm],
     queryFn: async ({ signal }) => {

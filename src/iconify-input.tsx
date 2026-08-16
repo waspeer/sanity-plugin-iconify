@@ -36,7 +36,7 @@ export const IconifyInput = memo(function IconifyInput(props: IconifyInputProps)
   return (
     <QueryClientProvider>
       <ThemeProvider theme={theme}>
-        <Stack space={2}>
+        <Stack gap={2}>
           <IconifyCombobox
             selectedIcon={selectedIcon}
             onSelect={handleSelect}

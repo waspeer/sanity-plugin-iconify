@@ -1,4 +1,5 @@
-import { Popover, useToast } from '@sanity/ui';
+import { Popover } from '@sanity/ui/popover';
+import { useToast } from '@sanity/ui/toast';
 import { useCombobox } from 'downshift';
 import { memo, useCallback, useEffect, useId, useRef } from 'react';
 import type { ObjectInputProps } from 'sanity';

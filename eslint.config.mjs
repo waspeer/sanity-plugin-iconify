@@ -8,7 +8,9 @@ const config = [
   query.default.configs['flat/recommended'],
   [
     {
-      ignores: ['v2-incompatible.js', '*.cjs', 'dist', 'package.config.ts', '*.gen.ts'],
+      // '**/dist' rather than 'dist' so the dev studio's production build output
+      // (dev/dist, produced by `test:e2e:dist`) is ignored too.
+      ignores: ['v2-incompatible.js', '*.cjs', '**/dist', 'package.config.ts', '*.gen.ts'],
     },
     {
       files: ['scripts/**'],
