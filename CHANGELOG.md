@@ -1,5 +1,15 @@
 # Changelog
 
+# [5.0.0](https://github.com/waspeer/sanity-plugin-iconify/compare/v4.0.2...v5.0.0) (2026-08-16)
+
+- fix(deps)!: move @sanity/ui to peerDependencies to dedupe with the Studio ([d0ecd83](https://github.com/waspeer/sanity-plugin-iconify/commit/d0ecd83f9e24cb870fd41da499fdeb86e5897dcc))
+
+### BREAKING CHANGES
+
+- requires Sanity Studio >= 6.9.2 and @sanity/ui ^4 as a peer
+  dependency. Sanity 5 and 6.0-6.9.1 ship @sanity/ui v3 and are no longer
+  supported; use sanity-plugin-iconify@4 with those.
+
 ## [4.0.2](https://github.com/waspeer/sanity-plugin-iconify/compare/v4.0.1...v4.0.2) (2026-08-01)
 
 ### Bug Fixes
