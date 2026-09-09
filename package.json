@@ -10,14 +10,23 @@
   "bugs": {
     "url": "https://github.com/waspeer/sanity-plugin-iconify/issues"
   },
+  "license": "MIT",
+  "author": "Wannes Salomé <mail@wannessalome.nl>",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/waspeer/sanity-plugin-iconify.git"
   },
-  "license": "MIT",
-  "author": "Wannes Salomé <mail@wannessalome.nl>",
-  "sideEffects": true,
+  "files": [
+    "dist",
+    "sanity.json",
+    "src",
+    "v2-incompatible.js"
+  ],
   "type": "module",
+  "sideEffects": true,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
   "exports": {
     ".": {
       "source": "./src/index.ts",
@@ -32,15 +41,6 @@
     },
     "./package.json": "./package.json"
   },
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.mts",
-  "files": [
-    "dist",
-    "sanity.json",
-    "src",
-    "v2-incompatible.js"
-  ],
   "scripts": {
     "build": "run-s build:verify build:bundle build:check",
     "build:bundle": "tsdown",
@@ -48,9 +48,7 @@
     "build:verify": "plugin-kit verify-package --silent",
     "dev": "vite dev --config dev/vite.config.ts",
     "dev:dist": "vite build --config dev/vite.config.ts && vite preview --config dev/vite.config.ts",
-    "format": "prettier --write --cache --ignore-unknown .",
     "generate-types": "node src/lib/generate-types",
-    "lint": "eslint .",
     "prepublishOnly": "node scripts/check-dist.mjs",
     "release": "release-it",
     "test": "vitest run",
@@ -62,7 +60,6 @@
     "test:watch": "vitest",
     "watch": "tsdown --watch"
   },
-  "browserslist": "extends @sanity/browserslist-config",
   "dependencies": {
     "@iconify/react": "^6.0.2",
     "@iconify/utils": "^3.1.7",
@@ -84,17 +81,13 @@
     "@sanity/pkg-utils": "^12.3.4",
     "@sanity/plugin-kit": "^10.0.9",
     "@sanity/ui": "^4.2.0",
-    "@tanstack/eslint-plugin-query": "^5.102.8",
     "@tanstack/react-query-devtools": "^5.102.8",
     "@types/react": "^19.3.0",
     "@types/styled-components": "^5.1.36",
     "@vitejs/plugin-react": "^6.1.1",
     "@vitest/ui": "^5.0.0",
-    "@waspeer/config": "^3.0.0",
-    "eslint": "^10.10.0",
     "lefthook": "^2.1.12",
     "npm-run-all2": "^9.0.3",
-    "prettier": "^3.9.6",
     "publint": "^0.3.24",
     "react": "^19.3.0",
     "react-dom": "^19.3.0",
@@ -106,6 +99,7 @@
     "tsx": "^4.23.13",
     "typescript": "^6.0.3",
     "vite": "^8.2.2",
+    "vite-plus": "^0.3.1",
     "vitest": "^5.0.0"
   },
   "peerDependencies": {
@@ -114,10 +108,11 @@
     "sanity": "^6.9.2",
     "styled-components": "^6"
   },
-  "packageManager": "pnpm@10.17.0",
+  "browserslist": "extends @sanity/browserslist-config",
   "engines": {
     "node": ">=22.12"
   },
+  "packageManager": "pnpm@10.17.0",
   "pnpm": {
     "onlyBuiltDependencies": [
       "esbuild",
@@ -127,7 +122,6 @@
     "overrides": {
       "@babel/core@<7.29.6": ">=7.29.6",
       "@isaacs/brace-expansion@<5.0.1": ">=5.0.1",
-      "@typescript-eslint/utils": "^8.61.1",
       "brace-expansion@>=4.0.0 <5.0.6": ">=5.0.6",
       "brace-expansion@<2.0.3": ">=2.0.3",
       "esbuild@<0.28.1": ">=0.28.1",
@@ -143,6 +137,16 @@
       "shell-quote@<1.8.4": ">=1.8.4",
       "tmp@<0.2.6": ">=0.2.6",
       "uuid@>=11.0.0 <11.1.1": ">=11.1.1"
+    },
+    "peerDependencyRules": {
+      "allowAny": [
+        "vite",
+        "vitest"
+      ],
+      "allowedVersions": {
+        "vite": "*",
+        "vitest": "*"
+      }
     }
   },
   "sanityPlugin": {

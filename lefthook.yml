@@ -3,12 +3,12 @@ commit-msg:
     'commitlint.sh':
       runner: bash
 
+# Lefthook owns the git hooks here (see commit-msg above), so `vp config`/
+# `vp migrate --hooks` is deliberately not used: it would point core.hooksPath
+# at .vite-hooks and shadow lefthook's .git/hooks, taking commitlint with it.
+# `vp staged` runs the `staged` config from vite.config.ts (`vp check --fix`)
+# and restages what it fixed.
 pre-commit:
-  parallel: true
   commands:
-    eslint:
-      run: npx eslint --no-warn-ignored --max-warnings 0 --fix {staged_files}
-      stage_fixed: true
-    prettier:
-      run: npx prettier --ignore-unknown --write {staged_files}
-      stage_fixed: true
+    vp-staged:
+      run: vp staged
