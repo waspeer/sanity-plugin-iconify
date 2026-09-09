@@ -1,5 +1,11 @@
 # Changelog
 
+## [5.0.1](https://github.com/waspeer/sanity-plugin-iconify/compare/v5.0.0...v5.0.1) (2026-09-09)
+
+### Bug Fixes
+
+- type-check the dev studio, e2e specs and scripts ([d9cdef5](https://github.com/waspeer/sanity-plugin-iconify/commit/d9cdef5ef33cfc23c930b0b2d7aa533b2819b948))
+
 # [5.0.0](https://github.com/waspeer/sanity-plugin-iconify/compare/v4.0.2...v5.0.0) (2026-08-16)
 
 - fix(deps)!: move @sanity/ui to peerDependencies to dedupe with the Studio ([d0ecd83](https://github.com/waspeer/sanity-plugin-iconify/commit/d0ecd83f9e24cb870fd41da499fdeb86e5897dcc))
