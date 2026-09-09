@@ -1,9 +1,17 @@
 {
   "extends": "./tsconfig.settings",
-  "include": ["./src", "./tsdown.config.ts"],
+  // Everything except the build output: this is the config the editor and
+  // `vp check` type-check with, and vp's type-aware linting covers the dev
+  // studio, the e2e specs and the scripts as well as ./src. The published
+  // build uses tsconfig.dist.json, which is narrower.
+  "include": ["."],
+  "exclude": ["dist", "dev/dist", "node_modules"],
   "compilerOptions": {
     "rootDir": ".",
     "jsx": "react-jsx",
-    "noEmit": true
+    "noEmit": true,
+    // The dev studio is a Vite app and uses import.meta.env; TypeScript 6 no
+    // longer pulls in every @types package by default, so list it explicitly.
+    "types": ["vite/client"]
   }
 }
