@@ -2,9 +2,22 @@
 
 ## [5.0.1](https://github.com/waspeer/sanity-plugin-iconify/compare/v5.0.0...v5.0.1) (2026-09-09)
 
+No changes to the published runtime bundle: `dist/index.mjs` and `dist/index.cjs` are byte-identical to 5.0.0 and the peer dependency ranges are unchanged. This release modernises the toolchain and fixes type coverage of the development setup.
+
 ### Bug Fixes
 
-- type-check the dev studio, e2e specs and scripts ([d9cdef5](https://github.com/waspeer/sanity-plugin-iconify/commit/d9cdef5ef33cfc23c930b0b2d7aa533b2819b948))
+- type-check the dev studio, e2e specs and scripts ([d9cdef5](https://github.com/waspeer/sanity-plugin-iconify/commit/d9cdef5ef33cfc23c930b0b2d7aa533b2819b948)) — `@types/react-dom` was missing, so the studio bootstrap in `dev/` was implicitly `any`; `tsconfig.json` now covers the whole project instead of only `src/`, and `dev/sanity.config.ts` gets `vite/client` types for `import.meta.env`.
+
+### Build / Dependencies
+
+- Replace ESLint + Prettier (`@waspeer/config`) with [Vite+](https://viteplus.dev) (oxlint + oxfmt); lefthook keeps running commitlint and now runs `vp staged` before commits ([3bf6df2](https://github.com/waspeer/sanity-plugin-iconify/commit/3bf6df2)).
+- Upgrade all dependencies to latest: `@sanity/plugin-kit` 4 → 10 (with `@sanity/pkg-utils` 12 as its required peer), `tsdown` 0.23, `vitest` 5, `@playwright/test` 1.63 ([126bfa3](https://github.com/waspeer/sanity-plugin-iconify/commit/126bfa3)); TypeScript 6 → 7 ([9191d66](https://github.com/waspeer/sanity-plugin-iconify/commit/9191d66)). Type declarations are now emitted by tsgo; the exported symbols are unchanged.
+- Prune 14 of the 17 `pnpm.overrides` that no longer affected the lockfile (two of them pulled in *newer* majors than the tree needed), and drop the unused `rimraf` and `@types/styled-components` devDependencies ([7d1b482](https://github.com/waspeer/sanity-plugin-iconify/commit/7d1b482)).
+- Building the package (`@sanity/plugin-kit verify-package`) now requires Node.js >= 24; the `engines` requirement for consumers stays `>=22.12`.
+
+### Documentation
+
+- Describe the actual development workflow in the README ([d77c34c](https://github.com/waspeer/sanity-plugin-iconify/commit/d77c34c)).
 
 # [5.0.0](https://github.com/waspeer/sanity-plugin-iconify/compare/v4.0.2...v5.0.0) (2026-08-16)
 
@@ -27,12 +40,6 @@
 ### Bug Fixes
 
 - transpile JSX in published dist ([e46aa47](https://github.com/waspeer/sanity-plugin-iconify/commit/e46aa47cd4623486e92bfdf3c047aa703b552a2d)), closes [#15](https://github.com/waspeer/sanity-plugin-iconify/issues/15)
-
-# [4.0.0](https://github.com/waspeer/sanity-plugin-iconify/compare/v3.0.0...v4.0.0) (2026-06-15)
-
-### Bug Fixes
-
-- regenerate lockfile and resolve pre-existing combobox type error ([e2352aa](https://github.com/waspeer/sanity-plugin-iconify/commit/e2352aaa6b7c5dfc094a57ed1651dd04ebd68178))
 
 # [4.0.0](https://github.com/waspeer/sanity-plugin-iconify/compare/v3.0.0...v4.0.0) (2026-06-15)
 
