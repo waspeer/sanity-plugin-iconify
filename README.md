@@ -283,9 +283,26 @@ git push origin new-feature-branch
 
 ## 🧪 Develop & test
 
-This plugin uses [@sanity/plugin-kit](https://github.com/sanity-io/plugin-kit) with default configuration for build & watch scripts.
+The repo ships a dev studio in `dev/` that loads the plugin straight from `src/`.
+Copy `dev/.env.example` to `dev/.env`, fill in a Sanity project id and dataset,
+then:
 
-See [Testing a plugin in Sanity Studio](https://github.com/sanity-io/plugin-kit#testing-a-plugin-in-sanity-studio) on how to run this plugin with hotreload in the studio.
+```sh
+pnpm install       # or: vp install
+pnpm dev           # dev studio on http://localhost:3333
+pnpm build         # verify package, bundle with tsdown, check the dist output
+pnpm test          # unit/type tests (vitest)
+pnpm test:e2e      # playwright against the dev studio, running the plugin from src
+pnpm test:e2e:dist # same specs against a production build of dist/
+vp check           # format, lint and type check (oxfmt + oxlint via vite-plus)
+```
+
+Tooling is [vite-plus](https://viteplus.dev): `vp check --fix` also runs on
+staged files through lefthook, which additionally lints commit messages with
+commitlint (the changelog is generated from them).
+
+[@sanity/plugin-kit](https://github.com/sanity-io/plugin-kit) is used for
+`verify-package` only; bundling is done by [tsdown](https://tsdown.dev).
 
 ## 👏 Acknowledgments
 
